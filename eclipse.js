@@ -257,8 +257,10 @@ client.on('message', (message) => {
             .setColor('f44242')
             .setFooter(message.author.tag, message.author.avatarURL)
             .setTitle('📢 ChangeLog')
+			.setDescription(cnt)
         client.channels.get('493119324513632276').send({embed}).then(msg => {
-            msg.react('457583765129003009');
+            msg.react('💖');
+            msg.react('💎');
         });
         client.channels.get('493119324513632276').send('<a:Sininho:457583765129003009> | Desculpe pelo everyone... Isso é apenas um anúncio!\n\n[ @everyone ] [ @here ]').then(msg => {
             msg.delete(5000);

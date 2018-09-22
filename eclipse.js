@@ -229,11 +229,11 @@ client.on('message', (message) => {
             .setFooter(message.author.tag, message.author.avatarURL)
             .setTitle('📢 Anúncio')
             .setDescription(cnt)
-        client.channels.get('454346383550316544').send(embed).then(msg => {
+        client.channels.get('493154825668657153').send(embed).then(msg => {
             msg.react('💖');
             msg.react('💎');
         });
-        client.channels.get('454346383550316544').send('<a:Sininho:457583765129003009> | Desculpe pelo everyone... Isso é apenas um anúncio!\n\n[ @everyone ] [ @here ]').then(msg => {
+        client.channels.get('493154825668657153').send('<a:Sininho:457583765129003009> | Desculpe pelo everyone... Isso é apenas um anúncio!\n\n[ @everyone ] [ @here ]').then(msg => {
             msg.delete(5000);
         });
 
@@ -257,10 +257,10 @@ client.on('message', (message) => {
             .setColor('f44242')
             .setFooter(message.author.tag, message.author.avatarURL)
             .setTitle('📢 ChangeLog')
-        client.channels.get('454346383550316544').send(embed).then(msg => {
+        client.channels.get('493154825668657153').send(embed).then(msg => {
             msg.react('457583765129003009');
         });
-        client.channels.get('454346383550316544').send('<a:Sininho:457583765129003009> | Desculpe pelo everyone... Isso é apenas um anúncio!\n\n[ @everyone ] [ @here ]').then(msg => {
+        client.channels.get('493154825668657153').send('<a:Sininho:457583765129003009> | Desculpe pelo everyone... Isso é apenas um anúncio!\n\n[ @everyone ] [ @here ]').then(msg => {
             msg.delete(5000);
         });
 
@@ -327,7 +327,7 @@ client.on('message', (message) => {
             .setTimestamp()
             .setThumbnail(message.author.avatarURL)
             .setColor('d62a13')
-        client.channels.get('446362756300537879').send(embed).then(msg => {
+        client.channels.get('493155271355400223').send(embed).then(msg => {
             msg.react('⏰');
         });
 
@@ -366,7 +366,7 @@ client.on('message', (message) => {
                 .setTitle(`🔇 Desmutado`)
                 .setDescription(`:spy: **|** **Usuário:**\n${user}\n:cop: **| Autor:**\n${client.user}`)
                 .setFooter(`ID do usuário: ${user.id}`)
-            client.channels.get('446362756300537879').send(unmutee)
+            client.channels.get('493155271355400223').send(unmutee)
 
         }, ms(time));
 
@@ -418,7 +418,7 @@ client.on('message', (message) => {
             .setTitle(`🔇 Desmutado`)
             .setDescription(`:spy: **|** **Usuário:**\n${user}\n:cop: **| Autor:**\n${message.author}`)
             .setFooter(`ID do usuário: ${user.id}`)
-        client.channels.get('446362756300537879').send(unmutee);
+        client.channels.get('493155271355400223').send(unmutee);
 
         message.reply('<a:Sininho:457583765129003009> | Usuário desmutado com sucesso!').then(msg => {
             msg.delete(10000);
@@ -464,7 +464,7 @@ client.on('message', (message) => {
             .setTimestamp()
             .setThumbnail(message.author.avatarURL)
             .setColor('d62a13')
-        client.channels.get('446362756300537879').send(embed).then(msg => {
+        client.channels.get('493155271355400223').send(embed).then(msg => {
             msg.react('🚫');
         });
 
@@ -514,7 +514,7 @@ client.on('message', (message) => {
             .setTimestamp()
             .setThumbnail(message.author.avatarURL)
             .setColor('d62a13')
-        client.channels.get('446362756300537879').send(embed).then(msg => {
+        client.channels.get('493155271355400223').send(embed).then(msg => {
             msg.react('👢');
         });
 

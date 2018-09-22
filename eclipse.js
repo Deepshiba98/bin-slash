@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const moment = require('moment');
 const tzone = require('moment-timezone');
 
 var prefix = "/";
@@ -520,44 +519,6 @@ client.on('message', (message) => {
 
     }
 
-    if(msg.startsWith(prefix + 'SERVERINFO')){
-
-        message.delete();
-
-        let regiao = {
-
-            "brazil": "Brasil",
-            "eu-central": "Europa central",
-            "singapore": "Singapora",
-            "us-central": "U.S. Central",
-            "sydney": "Sydney",
-            "us-east": "U.S. East",
-            "us-south": "U.S. Sul",
-            "us-west": "U.S. West",
-            "eu-west": "Western Europe",
-            "vip-us-east": "VIP U.S. East",
-            "london": "London",
-            "amsterdam": "Amsterdam",
-            "hongkong": "Hong Kong"
-
-        }
-
-        const embed = new Discord.RichEmbed()
-            .setAuthor(message.author.tag, message.author.avatarURL)
-            .setTitle('💁 Informações do Servidor')
-            .setDescription('Informações sobre o servidor.')
-            .addField('⚙ | ID:', message.guild.id, true)
-            .addField(':crown: | Pai de todos:', message.guild.owner, true)
-            .addField(':earth_americas: | Local:', regiao[message.guild.region], true)
-            .addField(':date: | Criado em:', moment(message.guild.createdAt).format('DD/MM/YY') + ' às ' + moment(message.guild.createdAt).format('HH:mm'), true)
-            .addField('<:ai:456100450786213938> | Entrou em:', moment(message.guild.joinedAt).format('DD/MM/YY') + ' às ' + moment(message.guild.joinedAt).format('HH:mm'), true)
-            .addField('<:visionario:452700782001913867> | Total de:', message.guild.memberCount, true)
-            .setColor('RANDOM')
-            .setThumbnail(client.user.avatarURL)
-            .setTimestamp()
-        message.channel.send(embed);
-
-    }
 
     if(msg.startsWith(prefix + 'MESSAGE')){
 

@@ -17,7 +17,7 @@ client.on("ready", () => {
     console.log(' ');
     console.log('Iniciado com sucesso !');
         
-    const activities = ['Feito com ♥ por zGhol#4680', 'http://bit.ly/PorkinBr', '🐷 Porkin', `${client.users.size} amiguinhos !`]
+    const activities = ['My Second Life RP', `Somos ${client.users.size} amiguinhos !`]
     let counter = 0
     setInterval(function() {
         counter+= 1
@@ -162,11 +162,11 @@ client.on('message', (message) => {
             .setThumbnail(client.user.avatarURL)
             .setDescription("*Limpe os canais.*\n\n⛓ **| !limpar ``<2 a 100>``**\n\n:twisted_rightwards_arrows: **| Alternativas:**\n!cc, !clearchat")
 
-        if(isNaN(args[0])) return message.channel.send(embed).then(msg => {
+        if(isNaN(args[0])) return message.channel.send({embed}).then(msg => {
             msg.delete(20000);
         });
 
-        if(args[0] < 2 || args[0] > 100) return message.channel.send(embed).then(msg => {
+        if(args[0] < 2 || args[0] > 100) return message.channel.send({embed}).then(msg => {
             msg.delete(20000);
         });
 
@@ -202,7 +202,7 @@ client.on('message', (message) => {
             .addField('💖 | Youtubers', '10k inscritos.', true)
             .addField('<:pkbswag:446437162322231296> | Ativar', 'Para ativar chame um Staff.', true)
             .addField(':twisted_rightwards_arrows: | Alternativas:', '/yt, /youtube')
-        message.channel.send(embed).then(msg => {
+        message.channel.send({embed}).then(msg => {
             msg.delete(25000);
             msg.react('💖');
         });
@@ -229,7 +229,7 @@ client.on('message', (message) => {
             .setFooter(message.author.tag, message.author.avatarURL)
             .setTitle('📢 Anúncio')
             .setDescription(cnt)
-        client.channels.get('493154825668657153').send(embed).then(msg => {
+        client.channels.get('493154825668657153').send({embed}).then(msg => {
             msg.react('💖');
             msg.react('💎');
         });
@@ -257,7 +257,7 @@ client.on('message', (message) => {
             .setColor('f44242')
             .setFooter(message.author.tag, message.author.avatarURL)
             .setTitle('📢 ChangeLog')
-        client.channels.get('493154825668657153').send(embed).then(msg => {
+        client.channels.get('493154825668657153').send({embed}).then(msg => {
             msg.react('457583765129003009');
         });
         client.channels.get('493154825668657153').send('<a:Sininho:457583765129003009> | Desculpe pelo everyone... Isso é apenas um anúncio!\n\n[ @everyone ] [ @here ]').then(msg => {
@@ -327,7 +327,7 @@ client.on('message', (message) => {
             .setTimestamp()
             .setThumbnail(message.author.avatarURL)
             .setColor('d62a13')
-        client.channels.get('493155271355400223').send(embed).then(msg => {
+        client.channels.get('493155271355400223').send({embed}).then(msg => {
             msg.react('⏰');
         });
 
@@ -464,7 +464,7 @@ client.on('message', (message) => {
             .setTimestamp()
             .setThumbnail(message.author.avatarURL)
             .setColor('d62a13')
-        client.channels.get('493155271355400223').send(embed).then(msg => {
+        client.channels.get('493155271355400223').send({embed}).then(msg => {
             msg.react('🚫');
         });
 
@@ -514,7 +514,7 @@ client.on('message', (message) => {
             .setTimestamp()
             .setThumbnail(message.author.avatarURL)
             .setColor('d62a13')
-        client.channels.get('493155271355400223').send(embed).then(msg => {
+        client.channels.get('493155271355400223').send({embed}).then(msg => {
             msg.react('👢');
         });
 
@@ -674,7 +674,7 @@ client.on('message', (message) => {
             .setDescription('Faça sua sugestão, /sugerir.')
             .addField('📝 | Sugestão:', sugerindo)
             .addField('<:visionario:452700782001913867> | Autor:', message.author, true)
-        client.channels.get('459052198739968000').send(embed).then(msg => {
+        client.channels.get('459052198739968000').send({embed}).then(msg => {
             msg.react('👍');
             msg.react('👎');
         });
@@ -731,7 +731,7 @@ client.on('message', (message) => {
             .setTimestamp()
             .setFooter(message.author.tag, message.author.avatarURL)
 
-        client.channels.get('459408848021749760').send(embed).then(msg => {
+        client.channels.get('459408848021749760').send({embed}).then(msg => {
 
             msg.react('✅');
             msg.react('❌');

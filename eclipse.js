@@ -31,10 +31,10 @@ var prefix = "!";
 
 client.on("ready", () => {
 	
-    client.channels.get('449624551505264640').send(':white_check_mark: | Bot reiniciado com sucesso !\n\nData: ' + hoje).then(msg => {
+    client.channels.get('493119324513632276').send(':white_check_mark: | Bot reiniciado com sucesso !\n\nData: ' + hoje).then(msg => {
     	msg.delete(60000)
     })
-    client.channels.get('449624551505264640').send('<@318511700808695818>').then(msg => {
+    client.channels.get('493119324513632276').send('<@318511700808695818>').then(msg => {
     	msg.delete(10000)
     })
 	    
@@ -70,8 +70,8 @@ client.on('message', (message) => {
 	    .addField('Canal:', `<#${message.channel.id}>`)
 	    .setColor('f7db60')
 	    .setFooter(client.user.username, client.user.avatarURL)
-	client.channels.get('449624551505264640').send(embed);
-	client.channels.get('449624551505264640').send('<@&421714694672351237>').then(msg => {
+	client.channels.get('493119324513632276').send(embed);
+	client.channels.get('493119324513632276').send('<@&421714694672351237>').then(msg => {
 		msg.delete(10000);
 	})
   	return;
@@ -108,10 +108,10 @@ client.on('message', (message) => {
 	    .setThumbnail('https://i.imgur.com/7MtwvU4.png')
 	    .setColor('f26363')
 	    .setFooter(message.author.username, message.author.avatarURL)
-	client.channels.get('416304384687734795').send('@everyone').then(msg => {
+	client.channels.get('493119324513632276').send('@everyone').then(msg => {
 		msg.delete(10000);
 	})
-	client.channels.get('416304384687734795').send({embed});
+	client.channels.get('493119324513632276').send({embed});
     }
 	
     if(msg.startsWith(prefix + 'AVISO')){
@@ -128,10 +128,10 @@ client.on('message', (message) => {
 	    .setThumbnail('https://i.imgur.com/7MtwvU4.png')
             .addField('Atenciosamente,', message.author)
 	    .setColor('f26363')
-	client.channels.get('416304349699112961').send('@everyone').then(msg => {
+	client.channels.get('493119324513632276').send('@everyone').then(msg => {
 		msg.delete(10000);
 	})
-	client.channels.get('416304349699112961').send({embed});
+	client.channels.get('493119324513632276').send({embed});
     }
 	
     if(msg.startsWith(prefix + 'INFO')){
@@ -212,7 +212,7 @@ client.on('guildMemberAdd', member => {
 		.setThumbnail(avatar)
 		.addField(':tada: | Seja Bem vindo(a)!', `» Bem vindo(a) ao Discord da Rede LoopMC ${member}!\n \nNosso IP: jogar.loop-mc.com.br\n \nNosso Site: https://loop-mc.com.br/`)
 		.setFooter(`${member.guild.name} × ${hoje}`);
-    	client.channels.get('446378249740615700').send({embed});
+    	client.channels.get('493119324513632276').send({embed});
   })
 
 client.login(process.env.BOT_TOKEN);

@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const ms = require('ms');
 const moment = require('moment');
 const tzone = require('moment-timezone');
 
@@ -46,14 +45,6 @@ client.on('message', (message) => {
     if(message.channel.type === 'dm') return;
 
     if(!message.content.startsWith(prefix) || message.author.bot) return;
-
-    if(msg.startsWith(prefix + 'PING')){
-
-        message.reply(new Date().getTime() - message.createdTimestamp + " ms").then(msg => {
-            msg.react('🏓');
-        });
-
-    }
 
     if(msg.startsWith(prefix + 'AJUDA') || msg.startsWith(prefix + 'HELP') || msg.startsWith(prefix + 'INFO')){
 

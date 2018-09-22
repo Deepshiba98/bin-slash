@@ -4,11 +4,12 @@
   "description": "",
   "main": "eclipse.js",
   "dependencies": {
-    "discord.js": "11.3.2",
+    "discord.js": "11.4.2",
     "discord-rich-presence": "0.0.6",
-    "request": "2.87.0",
-	"moment-timezone": "^0.5.14",
-	"moment": "^2.14.1",
+    "request": "2.88.0",
+	"moment": "2.22.2",
+	"momemt-timezone": "0.5.21",
+	"ms": "2.1.1"
 	
   },
   "devDependencies": {},

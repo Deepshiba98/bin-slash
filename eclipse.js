@@ -2,7 +2,6 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const ms = require('ms');
 const moment = require('moment');
-const tzone = require('moment-timezone');
 
 var prefix = "/";
 
@@ -16,7 +15,6 @@ client.on("ready", () => {
     console.log(' ');
     console.log(' ');
     console.log(' ');
-    console.log(tzone().tz("America/Sao_Paulo").format('DD/MM/YY') + ' às ' + tzone().tz("America/Sao_Paulo").format('HH:mm'));
     console.log('Iniciado com sucesso !');
         
     const activities = ['Feito com ♥ por zGhol#4680', 'http://bit.ly/PorkinBr', '🐷 Porkin', `${client.users.size} amiguinhos !`]
@@ -259,7 +257,6 @@ client.on('message', (message) => {
             .setColor('f44242')
             .setFooter(message.author.tag, message.author.avatarURL)
             .setTitle('📢 ChangeLog')
-            .setDescription(` :black_small_square: ${tzone().tz("America/Sao_Paulo").format('DD/MM/YY')}\n\n :white_small_square: ${cnt}`)
         client.channels.get('454346383550316544').send(embed).then(msg => {
             msg.react('457583765129003009');
         });
@@ -638,7 +635,6 @@ client.on('message', (message) => {
             .addField('<:empresario:457899299213279243> | Acusado:', user, true)
             .addField('<:pm:457899299376726016> | Autor:', message.author, true)
             .addField('💬 | Canal:', message.channel, true)
-            .addField('📅 | Data:', tzone().tz("America/Sao_Paulo").format('DD/MM/YY') + ' às ' + tzone().tz("America/Sao_Paulo").format('HH:mm'), true)
             .addField('📝 | Motivo:', motivo[0], true)
             .addField('🖼 | Prova:', motivo[1], true)
             .setThumbnail(client.user.avatarURL)
@@ -678,7 +674,6 @@ client.on('message', (message) => {
             .setDescription('Faça sua sugestão, /sugerir.')
             .addField('📝 | Sugestão:', sugerindo)
             .addField('<:visionario:452700782001913867> | Autor:', message.author, true)
-            .addField('📅 | Data:', tzone().tz("America/Sao_Paulo").format('DD/MM/YY') + ' às ' + tzone().tz("America/Sao_Paulo").format('HH:mm'), true)
         client.channels.get('459052198739968000').send(embed).then(msg => {
             msg.react('👍');
             msg.react('👎');

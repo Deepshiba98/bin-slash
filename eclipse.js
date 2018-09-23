@@ -47,7 +47,7 @@ client.on('message', (message) => {
 
     if(msg.startsWith(prefix + 'PING')){
 
-        message.reply(new Date().getTime() - message.createdTimestamp + " ms").then(msg => {
+        message.reply(new Date().getTime() - " o seu ping é de " + message.createdTimestamp + " ms").then(msg => {
             msg.react('🏓');
         });
 

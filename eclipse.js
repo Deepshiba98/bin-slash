@@ -55,7 +55,7 @@ client.on('message', (message) => {
 
     if(/(?:https?:\/)?discord(?:app.com\/invite|.gg)/gi.test(message.content)){
         message.delete();
-      message.author.send(`:x: | Você não pode divulgar em ${message.channel} ! :rage: !`).then(msg => {
+      message.author.send(`:x: | Você não pode divulgar outros servidores em ${message.channel} ! :rage: !`).then(msg => {
           msg.delete(10000)
       })
       let embed = new Discord.RichEmbed()
@@ -81,7 +81,7 @@ client.on('message', (message) => {
             .setTitle(`🐷 Olá ${message.author.tag}, posso ajudar ?`)
             .setDescription("Meu nome é PKB, meu papai <@318511700808695818> me criou em **JS**.\n\n**💡 | Prefixo:**\nMeu prefixo é ``/``\n\n**🤝 | Canal:**\n[PorkinBr](http://bit.ly/PorkinBr)")
             .setColor('RANDOM')
-            .setThumbnail('https://i.imgur.com/T03YamI.png')
+            .setThumbnail('https://i.imgur.com/Td24sD6.png')
             .setTimestamp()
 
         message.author.send(nada).then(msg => {
@@ -206,7 +206,7 @@ client.on('message', (message) => {
 
     }
 
-    if(msg.startsWith(prefix + 'REQUISITOS') || msg.startsWith(prefix + 'YT') || msg.startsWith(prefix + 'YOUTUBE')){
+    /*if(msg.startsWith(prefix + 'REQUISITOS') || msg.startsWith(prefix + 'YT') || msg.startsWith(prefix + 'YOUTUBE')){
 
         message.delete();
 
@@ -226,7 +226,7 @@ client.on('message', (message) => {
             msg.react('💖');
         });
 
-    }
+    }*/
 
     if(msg.startsWith(prefix + 'ANUNCIO')){
 
@@ -775,22 +775,24 @@ client.on('guildMemberAdd', member => {
 
     let avatar = member.user.avatarURL;
 
-    let role = member.guild.roles.find('name', '👤 Membros');
+    let role = member.guild.roles.find('name', '👤 Civil 👤');
 
     let embed = new Discord.RichEmbed()
         .setColor('RANDOM')
         .setThumbnail(avatar)
-        .setDescription(':flag_br: Você acabou de entrar no servidor do :pig: PKB! Aqui você pode interagir com diversas pessoas, fazer amigos e muito mais! Qualquer dúvida, chame algum de nossos membros da equipe. \n\nDivirta-se! :wink:')
-        .setAuthor(`${member.user.tag} Bem-Vindo(a)`, client.user.avatarURL)
-        .addField('<:yt:457595948969754629> | Youtube:', 'Vire um porco [clique aqui](http://bit.ly/PorkinBr)', true)
-        .addField('<:twitter:457595715515056128> | Twitter:', 'Me siga no [twitter](https://twitter.com/KayoFelipeBR)', true)
-        .addField(':cop::skin-tone-1: | Fique atento!', 'Leia nossas <#445684151723622401> e evite ser punido!', true)
-        .addField('<a:sininho:457595766886629377> | Novidades:', 'Sabia que nosso servidor conta com um sistema de ranks exclusivos? evolua seu rank integarindo com nossos usuários em canais de conversas e ganhe um cargo personalizado para você!', true)
-        .setFooter(`zGhol#4680 • © Todos direitos reservados.`, 'https://i.imgur.com/T03YamI.png')
+        /*.setDescription(':flag_pt: Você acabou de entrar no discord do :logo: **My Second Life RP**! Aqui você pode interagir com diversas pessoas, fazer amigos e muito mais! Qualquer dúvida, chame algum de nossos membros da STAFF. \n\nDivirta-se! :wink:')*/
+        .setAuthor(`${member.user.tag}`, client.user.avatarURL)
+        /*.addField('<:yt:457595948969754629> | Youtube:', 'Vire um porco [clique aqui](http://bit.ly/PorkinBr)', true)
+        .addField('<:twitter:457595715515056128> | Twitter:', 'Me siga no [twitter](https://twitter.com/KayoFelipeBR)', true)*/
+        .addField(':pmoi: | Seja bem-vindo(a)', 'Você acabou de entrar no discord da rede :logo: **My Second Life RP** o melhor servidor de FiveM para se jogar.', true)
+        .addField(':baladinha: | Novidades', 'Veja todas as novidades em <#485215309553205262>.', true)
+        .addField(':warning:  | Fique atento!', 'Leia nossas <#485218949890572304> e evite ser punido!', true)
+        .addField('', 'Sabia que nosso servidor conta com um sistema de ranks exclusivos? evolua seu rank integarindo com nossos usuários em canais de conversas e ganhe um cargo personalizado para você!', true)
+        .setFooter(`My Second Life RP • © Todos direitos reservados.`, 'https://i.imgur.com/Td24sD6.png')
         .setTimestamp()
-    client.channels.get('493119324513632276').send({embed}).then(msg => {
-        msg.react('🐷')
-        msg.react('457583765129003009')
+    client.channels.get('485569932449546240').send({embed}).then(msg => {
+        msg.react(':logo:')
+        msg.react(':logo1:')
     });
 
     member.addRole(role);

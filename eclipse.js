@@ -46,11 +46,31 @@ client.on('message', (message) => {
     if(!message.content.startsWith(prefix) || message.author.bot) return;
 
     if(msg.startsWith(prefix + 'PING')){
-        message.reply("o seu ping é de "(new Date().getTime() - message.createdTimestamp + " ms").then(msg => {
+
+        message.reply(new Date().getTime() - message.createdTimestamp + " ms").then(msg => {
             msg.react('🏓');
-        }));
+        });
 
     }
+
+    if(/(?:https?:\/)?discord(?:app.com\/invite|.gg)/gi.test(message.content)){
+        message.delete();
+      message.author.send(`:x: | Você não pode divulgar em ${message.channel} ! :rage: !`).then(msg => {
+          msg.delete(10000)
+      })
+      let embed = new Discord.RichEmbed()
+          .setTitle(':warning: SecondLife BOT Logs - Divulgação :warning:')
+          .addField('Autor:', `<@!${message.author.id}>`)
+          .addField('Discord:', message.content)
+          .addField('Canal:', `<#${message.channel.id}>`)
+          .setColor('f7db60')
+          .setFooter(client.user.username, client.user.avatarURL)
+      client.channels.get('493119324513632276').send(embed);
+      client.channels.get('493119324513632276').send('<@&421714694672351237>').then(msg => {
+          msg.delete(10000);
+      })
+        return;
+      }
 
     if(msg.startsWith(prefix + 'AJUDA') || msg.startsWith(prefix + 'HELP') || msg.startsWith(prefix + 'INFO')){
 

@@ -780,14 +780,13 @@ client.on('guildMemberAdd', member => {
     let embed = new Discord.RichEmbed()
         .setColor('RANDOM')
         .setThumbnail(avatar)
+        .setDescription(' ')
         /*.setDescription(':flag_pt: Você acabou de entrar no discord do :logo: **My Second Life RP**! Aqui você pode interagir com diversas pessoas, fazer amigos e muito mais! Qualquer dúvida, chame algum de nossos membros da STAFF. \n\nDivirta-se! :wink:')*/
         .setAuthor(`${member.user.tag}`, client.user.avatarURL)
-        /*.addField('<:yt:457595948969754629> | Youtube:', 'Vire um porco [clique aqui](http://bit.ly/PorkinBr)', true)
-        .addField('<:twitter:457595715515056128> | Twitter:', 'Me siga no [twitter](https://twitter.com/KayoFelipeBR)', true)*/
         .addField(':pmoi: | Seja bem-vindo(a)', 'Você acabou de entrar no discord da rede :logo: **My Second Life RP** o melhor servidor de FiveM para se jogar.', true)
         .addField(':baladinha: | Novidades', 'Veja todas as novidades em <#485215309553205262>.', true)
         .addField(':warning:  | Fique atento!', 'Leia nossas <#485218949890572304> e evite ser punido!', true)
-        .addField('', 'Sabia que nosso servidor conta com um sistema de ranks exclusivos? evolua seu rank integarindo com nossos usuários em canais de conversas e ganhe um cargo personalizado para você!', true)
+        .addField(' ', 'Sabia que nosso servidor conta com um sistema de ranks exclusivos? evolua seu rank integarindo com nossos usuários em canais de conversas e ganhe um cargo personalizado para você!', true)
         .setFooter(`My Second Life RP • © Todos direitos reservados.`, 'https://i.imgur.com/Td24sD6.png')
         .setTimestamp()
     client.channels.get('485569932449546240').send({embed}).then(msg => {

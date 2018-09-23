@@ -783,10 +783,10 @@ client.on('guildMemberAdd', member => {
         /*.setDescription('Aqui você pode interagir com diversas pessoas, fazer amigos e muito mais! Qualquer dúvida, chame algum de nossos membros da STAFF. \n\nSabia que nosso servidor conta com um sistema de ranks exclusivos? evolua seu rank integarindo com nossos usuários em canais de conversas e ganhe um cargo personalizado para você!\n\n')*/
         .setAuthor(`${member.user.tag}`, client.user.avatarURL)
         .addField('🍻 | Seja bem-vindo(a)', 'Você acabou de entrar no discord da rede <:logo:493458750049484831> **My Second Life RP** o melhor servidor de FiveM para se jogar.\n', true)
-        .addField('\n', 'Aqui você pode interagir com diversas pessoas, fazer amigos e muito mais! Qualquer dúvida, chame algum de nossos membros da STAFF.\n', true)
+        .addField('_ _', 'Aqui você pode interagir com diversas pessoas, fazer amigos e muito mais! Qualquer dúvida, chame algum de nossos membros da STAFF.\n', true)
         .addField('⭐ | Novidades', 'Veja todas as novidades em <#485215309553205262>.\n', true)
         .addField(':warning:  | Fique atento!', 'Leia as nossas <#485218949890572304> e evite ser punido!\n', true)
-        .addField('\n', 'Sabia que nosso servidor conta com um sistema de ranks exclusivos? evolua seu rank integarindo com nossos usuários em canais de conversas e ganhe um cargo personalizado para você!\n', true)
+        .addField('_ _', 'Sabia que nosso servidor conta com um sistema de ranks exclusivos? evolua seu rank integarindo com nossos usuários em canais de conversas e ganhe um cargo personalizado para você!\n', true)
         .setFooter(`My Second Life RP • © Todos direitos reservados.`, 'https://i.imgur.com/Td24sD6.png')
         .setTimestamp()
     client.channels.get('485569932449546240').send({embed}).then(msg => {

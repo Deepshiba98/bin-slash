@@ -36,6 +36,27 @@ client.on("ready", () => {
 
 client.on('message', (message) => {
 
+    var hoje = new Date();
+            var dd = hoje.getDate();
+            var mm = hoje.getMonth()+1;
+            var hh = hoje.getHours();
+            var min = hoje.getMinutes();
+            var ss = hoje.getSeconds();
+            var yyyy = hoje.getFullYear();
+            if(dd<10){
+                dd = '0'+dd;
+            }
+            if (mm<10) {
+                mm = '0'+mm;
+            }
+            if (hh<10){
+                hh = '0'+hh;
+            }
+            if (min<10){
+                min = '0'+min;
+            }
+            var hoje = dd+ '/' +mm+ '/' +yyyy + ' às ' + hh + ':' + min;
+
     let msg = message.content.toUpperCase();
     let sender = message.author;
     let cont = message.content.slice(prefix.length).split(" ");
@@ -272,7 +293,7 @@ client.on('message', (message) => {
             msg.delete(10000);
         });
 
-        const embed = new Discord.RichEmbed()
+        /*const embed = new Discord.RichEmbed()
             .setColor('f44242')
             .setFooter(message.author.tag, message.author.avatarURL)
             .setTitle('📢 ChangeLog')
@@ -282,6 +303,20 @@ client.on('message', (message) => {
             msg.react('💎');
         });
         client.channels.get('493119324513632276').send('<a:Sininho:457583765129003009> | Desculpe pelo everyone... Isso é apenas um anúncio!\n\n[ @everyone ] [ @here ]').then(msg => {
+            msg.delete(5000);
+        });*/
+        const embed = new Discord.RichEmbed()
+            .setColor('f44242')
+            .setFooter(message.author.tag, message.author.avatarURL)
+            .setTitle('📢  Logs - My Second Life')
+            .addField(':date: ${hoje}', cnt, true)
+            .addField('**Atenciosamente,**', message.author, true)
+			/*.setDescription()*/
+        client.channels.get('493119324513632276').send({embed}).then(msg => {
+            /*msg.react('💖');
+            msg.react('💎');*/
+        });
+        client.channels.get('493119324513632276').send(' | Desculpe pelo everyone... Isso é apenas um anúncio!\n\n[ @everyone ] [ @here ]').then(msg => {
             msg.delete(5000);
         });
 

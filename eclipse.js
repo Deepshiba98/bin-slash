@@ -313,10 +313,10 @@ client.on('message', (message) => {
         const embed = new Discord.RichEmbed()
             .setColor('f44242')
             .setFooter(message.author.tag, message.author.avatarURL)
-            .setThumbnail(client.user.avatarURL)
+            .setThumbnail('https://i.imgur.com/Td24sD6.png')
             .setTitle('📢  Logs - My Second Life')
-            .addField(`:date: ${hoje}`, cnt, true)
-            .addField('**Atenciosamente,**', message.author, true)
+            .addField(`:date: ${hojee}`, cnt)
+            .addField('**Atenciosamente,**', message.author)
 			/*.setDescription()*/
         client.channels.get('493119324513632276').send({embed}).then(msg => {
             /*msg.react('💖');

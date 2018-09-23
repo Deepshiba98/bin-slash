@@ -789,8 +789,8 @@ client.on('guildMemberAdd', member => {
         .setFooter(`My Second Life RP • © Todos direitos reservados.`, 'https://i.imgur.com/Td24sD6.png')
         .setTimestamp()
     client.channels.get('485569932449546240').send({embed}).then(msg => {
-        msg.react('<:logo:493458750049484831>')
-        msg.react('<:logo1:468778622485004300>')
+        msg.react('493458750049484831')
+        msg.react('468778622485004300')
     });
 
     member.addRole(role);

@@ -104,8 +104,8 @@ client.on('message', (message) => {
 
         const nada = new Discord.RichEmbed()
             .setAuthor(message.guild, message.author.avatarURL)
-            .setTitle(`🐷 Olá ${message.author.tag}, posso ajudar ?`)
-            .setDescription("Meu nome é PKB, meu papai <@318511700808695818> me criou em **JS**.\n\n**💡 | Prefixo:**\nMeu prefixo é ``/``\n\n**🤝 | Canal:**\n[PorkinBr](http://bit.ly/PorkinBr)")
+            .setTitle(`<:logo:493458750049484831> Olá ${message.author.tag}, posso ajudar ?`)
+            .setDescription("O meu pai é o <@125324468913438720>, pois ele criou-me.\n\n**💡 | Prefixo:**\nMeu prefixo é ``/``\n\n**Servidor será aberto brevemente.**")
             .setColor('RANDOM')
             .setThumbnail('https://i.imgur.com/Td24sD6.png')
             .setTimestamp()

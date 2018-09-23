@@ -136,7 +136,7 @@ client.on('message', (message) => {
                 mda.on('collect', r => {
 
                     const comandinhos = new Discord.RichEmbed()
-                        .setTitle('<:pm:457899299376726016> Administração')
+                        .setTitle('👮 Administração')
                         .setColor('d83f31')
                         .setDescription('*Veja informações sobre os comandos de administração.*')
                         .addField('📢 | Anúncio:', "/anuncio ``<mensagem>.``", true)
@@ -165,11 +165,11 @@ client.on('message', (message) => {
                 dmc.on('collect', r => {
 
                     const comandinhos = new Discord.RichEmbed()
-                        .setTitle('<:retard:457899300320444426> Outros')
+                        .setTitle('💡 Outros')
                         .setColor('efd94a')
                         .setDescription('*Veja informações sobre outros comandos.*')
                         .addField('🏓 | Ping:', 'Veja seu ping.', true)
-                        .addField('<:youtuber:454339303821279242> | Requisitos:', "/requisitos", true)
+                        /*.addField('<:youtuber:454339303821279242> | Requisitos:', "/requisitos", true)*/
                         .addField('💁 | Informações do Servidor:', "/serverinfo", true)
                         .addField('🖼 | Avatar:', "/avatar ``<@membro>``", true)
                         .addField('🛡 | Denúncia:', "/denunciar ``<@membro>`` ``<motivo>`` - ``<prova>``")
@@ -186,7 +186,7 @@ client.on('message', (message) => {
 
         });
 
-        message.reply('<a:Sininho:457583765129003009> | Enviei as informações no seu privado!').then(msg => {
+        message.reply(':bell: | Enviei as informações no seu privado!').then(msg => {
             msg.delete(10000);
         });
     }
@@ -205,7 +205,7 @@ client.on('message', (message) => {
             .setColor('RANDOM')
             .setTitle('🚽 | Limpeza')
             .setThumbnail(client.user.avatarURL)
-            .setDescription("*Limpe os canais.*\n\n⛓ **| !limpar ``<2 a 100>``**\n\n:twisted_rightwards_arrows: **| Alternativas:**\n!cc, !clearchat")
+            .setDescription("*Limpe os canais.*\n\n⛓ **| !limpar ``<2 a 100>``**\n\n:twisted_rightwards_arrows: **| Alternativas:**\n/cc, /clearchat")
 
         if(isNaN(args[0])) return message.channel.send({embed}).then(msg => {
             msg.delete(20000);
@@ -278,7 +278,7 @@ client.on('message', (message) => {
             msg.react('💖');
             msg.react('💎');
         });
-        client.channels.get('485569932449546240').send('<a:Sininho:457583765129003009> | Desculpe pelo everyone... Isso é apenas um anúncio!\n\n[ @everyone ] [ @here ]').then(msg => {
+        client.channels.get('485569932449546240').send(':bell: | Desculpe pelo everyone... Isso é apenas um anúncio!\n\n[ @everyone ] [ @here ]').then(msg => {
             msg.delete(5000);
         });
 
@@ -307,7 +307,7 @@ client.on('message', (message) => {
             msg.react('💖');
             msg.react('💎');
         });
-        client.channels.get('493119324513632276').send('<a:Sininho:457583765129003009> | Desculpe pelo everyone... Isso é apenas um anúncio!\n\n[ @everyone ] [ @here ]').then(msg => {
+        client.channels.get('493119324513632276').send(':bell: | Desculpe pelo everyone... Isso é apenas um anúncio!\n\n[ @everyone ] [ @here ]').then(msg => {
             msg.delete(5000);
         });*/
         const embed = new Discord.RichEmbed()
@@ -409,7 +409,7 @@ client.on('message', (message) => {
             .setColor('d62a13')
         user.send(completo);
 
-        message.reply('<a:Sininho:457583765129003009> | Usuário punido com sucesso!').then(msg => {
+        message.reply(':bell: | Usuário punido com sucesso!').then(msg => {
             msg.delete(10000);
         });
 
@@ -482,7 +482,7 @@ client.on('message', (message) => {
             .setFooter(`ID do usuário: ${user.id}`)
         client.channels.get('493119324513632276').send(unmutee);
 
-        message.reply('<a:Sininho:457583765129003009> | Usuário desmutado com sucesso!').then(msg => {
+        message.reply(':bell: | Usuário desmutado com sucesso!').then(msg => {
             msg.delete(10000);
         });
 
@@ -530,7 +530,7 @@ client.on('message', (message) => {
             msg.react('🚫');
         });
 
-        message.reply('<a:Sininho:457583765129003009> | Usuário punido com sucesso!').then(msg => {
+        message.reply(':bell: | Usuário punido com sucesso!').then(msg => {
             msg.delete(10000);
         });
 
@@ -580,7 +580,7 @@ client.on('message', (message) => {
             msg.react('👢');
         });
 
-        message.reply('<a:Sininho:457583765129003009> | Usuário punido com sucesso!').then(msg => {
+        message.reply(':bell: | Usuário punido com sucesso!').then(msg => {
             msg.delete(10000);
         });
 

@@ -649,12 +649,22 @@ client.on('message', (message) => {
 
         let args1 = message.content.slice(prefix.length + 4);
 
-        const embed = new Discord.RichEmbed()
+        /*const embed = new Discord.RichEmbed()
             .setColor('f44242')
             .setTimestamp()
             .setFooter(message.author.tag, message.author.avatarURL)
-            .setTitle('📢 Anúncio')
+            .setTitle('📢 Anúncio - My Second Life')
+            .setDescription(args1)*/
+
+        const embed = new Discord.RichEmbed()
+            .setColor('f44242')
+            .setFooter(message.author.tag, message.author.avatarURL)
+            .setThumbnail('https://i.imgur.com/Td24sD6.png')
+            .setTitle('📢  Logs - My Second Life')
             .setDescription(args1)
+            .addField('**Atenciosamente,**', message.author)
+            .setTimestamp()
+
         message.channel.send(embed);
 
     }

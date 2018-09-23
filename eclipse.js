@@ -535,7 +535,7 @@ client.on('message', (message) => {
             .setTimestamp()
             .setThumbnail(message.author.avatarURL)
             .setColor('d62a13')
-        client.channels.get('493155271355400223').send({embed}).then(msg => {
+        client.channels.get('493119324513632276').send({embed}).then(msg => {
             msg.react('👢');
         });
 

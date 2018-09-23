@@ -46,8 +46,8 @@ client.on('message', (message) => {
     if(!message.content.startsWith(prefix) || message.author.bot) return;
 
     if(msg.startsWith(prefix + 'PING')){
-        message.reply("O seu ping é de "
-        message.reply(new Date().getTime() - message.createdTimestamp + " ms")).then(msg => {
+
+        message.reply("o seu ping é de " new Date().getTime() - message.createdTimestamp + " ms").then(msg => {
             msg.react('🏓');
         });
 

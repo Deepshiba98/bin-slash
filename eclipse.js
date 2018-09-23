@@ -527,9 +527,9 @@ client.on('message', (message) => {
 
         let embed = new Discord.RichEmbed()
             .setAuthor(message.author.tag, message.author.avatarURL)
-            .setTitle(`:no_entry_sign: Punições - Expulsamento`)
+            .setTitle(`:no_entry_sign: Punições - KICK`)
             .addField(':spy: | Usuário punido:', user, true)
-            .addField(':cop: | Autor do punimento:', message.author, true)
+            .addField(':cop: | STAFF:', message.author, true)
             .addField(':pencil: | Motivo:', motivo, true)
             .setFooter(`ID do usuário: ${user.id}`)
             .setTimestamp()
@@ -775,7 +775,7 @@ client.on('guildMemberAdd', member => {
 
     let avatar = member.user.avatarURL;
 
-    let role = member.guild.roles.find('name', '👤 Civil 👤');
+    /*let role = member.guild.roles.find('name', '👤 Civil 👤');*/
 
     let embed = new Discord.RichEmbed()
         .setColor('RANDOM')
@@ -795,7 +795,7 @@ client.on('guildMemberAdd', member => {
         msg.react(':logo1:')
     });
 
-    member.addRole(role);
+    /*member.addRole(role);*/
 
 });
 

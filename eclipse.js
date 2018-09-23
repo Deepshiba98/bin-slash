@@ -789,17 +789,25 @@ client.on('message', (message) => {
             msg.delete(20000);
         });
 
-        const embed = new Discord.RichEmbed()
+        /*const embed = new Discord.RichEmbed()
             .setTitle('📮 Enquete')
             .setColor('RANDOM')
             .addField('📝 | Votação:', motivo)
             .setTimestamp()
-            .setFooter(message.author.tag, message.author.avatarURL)
+            .setFooter(message.author.tag, message.author.avatarURL)*/
+
+            const embed = new Discord.RichEmbed()
+            .setColor('f44242')
+            .setFooter('Autor: ' + message.author.tag, message.author.avatarURL)
+            .setThumbnail('https://i.imgur.com/Td24sD6.png')
+            .setTitle(':loudspeaker: Votação')
+            .addField(':postbox: | Informações:', motivo)
+            .setTimestamp()
 
         client.channels.get('493119324513632276').send({embed}).then(msg => {
 
-            msg.react('✅');
-            msg.react('❌');
+            msg.react('👍');
+            msg.react('👎');
 
         });
 

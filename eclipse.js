@@ -248,11 +248,11 @@ client.on('message', (message) => {
             .setFooter(message.author.tag, message.author.avatarURL)
             .setTitle('📢 Anúncio')
             .setDescription(cnt)
-        client.channels.get('493119324513632276').send({embed}).then(msg => {
+        client.channels.get('485569932449546240').send({embed}).then(msg => {
             msg.react('💖');
             msg.react('💎');
         });
-        client.channels.get('493119324513632276').send('<a:Sininho:457583765129003009> | Desculpe pelo everyone... Isso é apenas um anúncio!\n\n[ @everyone ] [ @here ]').then(msg => {
+        client.channels.get('485569932449546240').send('<a:Sininho:457583765129003009> | Desculpe pelo everyone... Isso é apenas um anúncio!\n\n[ @everyone ] [ @here ]').then(msg => {
             msg.delete(5000);
         });
 
@@ -777,7 +777,7 @@ client.on('guildMemberAdd', member => {
 
     let role = member.guild.roles.find('name', '👤 Civil 👤');
 
-    const embed = new Discord.RichEmbed()
+    let embed = new Discord.RichEmbed()
         .setColor('RANDOM')
         .setThumbnail(avatar)
         .setDescription(' ')

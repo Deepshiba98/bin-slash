@@ -777,7 +777,7 @@ client.on('guildMemberAdd', member => {
 
     let role = member.guild.roles.find('name', '👤 Civil 👤');
 
-    let embed = new Discord.RichEmbed()
+    const embed = new Discord.RichEmbed()
         .setColor('RANDOM')
         .setThumbnail(avatar)
         .setDescription(' ')

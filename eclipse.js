@@ -775,7 +775,7 @@ client.on('guildMemberAdd', member => {
 
     let avatar = member.user.avatarURL;
 
-    /*let role = member.guild.roles.find('name', '👤 Civil 👤');*/
+    let role = member.guild.roles.find('name', '👤 Civil 👤');
 
     let embed = new Discord.RichEmbed()
         .setColor('RANDOM')
@@ -795,7 +795,7 @@ client.on('guildMemberAdd', member => {
         msg.react(':logo1:')
     });
 
-    /*member.addRole(role);*/
+    member.addRole(role);
 
 });
 

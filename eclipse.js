@@ -105,7 +105,7 @@ client.on('message', (message) => {
         const nada = new Discord.RichEmbed()
             .setAuthor(message.guild, message.author.avatarURL)
             .setTitle(`<:logo:493458750049484831> Olá ${message.author.tag}, posso ajudar ?`)
-            .setDescription("Eu fui criado por <@125324468913438720>, pois se encontrar algum erro/bug em mim por-favor informe.\n\n**💡 | Prefixo:**\nMeu prefixo é ``/``\n\n**Servidor será aberto brevemente.**")
+            .setDescription("Eu sou um rabô e fui criado pelo <@125324468913438720>, pois se encontrar algum erro/bug em mim por-favor informe a STAFF.\n\n**💡 | Prefixo:**\nMeu prefixo é ``/``\n\n**Servidor será aberto brevemente.**")
             .setColor('RANDOM')
             .setThumbnail('https://i.imgur.com/Td24sD6.png')
             .setTimestamp()
@@ -445,7 +445,7 @@ client.on('message', (message) => {
         let role = message.guild.roles.find('name', 'MUTADO');
         const ert = new Discord.RichEmbed()
             .setTitle(':warning: Opaah... Erros encontrados !')
-            .addField(':no_entry_sign: | Erro encontrado:', "Grupo ``Silenciado`` não foi encontrado porfavor crie-o!")
+            .addField(':no_entry_sign: | Erro encontrado:', "Grupo ``MUTADO`` não foi encontrado porfavor crie-o!")
             .setColor('f4eb42')
             .setTimestamp()
             .setFooter('Erro: TempMute', client.user.avatarURL)

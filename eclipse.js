@@ -269,7 +269,7 @@ client.on('message', (message) => {
             msg.delete(10000);
         });
 
-        const embed = new Discord.RichEmbed()
+        /*const embed = new Discord.RichEmbed()
             .setColor('f44242')
             .setTimestamp()
             .setFooter(message.author.tag, message.author.avatarURL)
@@ -279,7 +279,22 @@ client.on('message', (message) => {
             msg.react('💖');
             msg.react('💎');
         });
-        client.channels.get('485569932449546240').send(':bell: | Desculpe pelo everyone... Isso é apenas um anúncio!\n\n[ @everyone ] [ @here ]').then(msg => {
+        client.channels.get('485569932449546240').send(':bell: | Pedimos desculpa pelo everyone... Isto é apenas um anúncio!\n\n[ @everyone ] [ @here ]').then(msg => {
+            msg.delete(5000);
+        });*/
+
+        const embed = new Discord.RichEmbed()
+            .setColor('f44242')
+            .setFooter(message.author.tag, message.author.avatarURL)
+            .setThumbnail('https://i.imgur.com/Td24sD6.png')
+            .setTitle('📢  Anúncio - My Second Life')
+            .addField('_ _', cnt)
+            .addField('**Atenciosamente,**', message.author)
+            .setTimestamp()
+			/*.setDescription()*/
+        client.channels.get('493119324513632276').send({embed}).then(msg => {
+        });
+        client.channels.get('493119324513632276').send(' | Pedimos desculpa pelo everyone... Isto é apenas um anúncio!\n\n[ @everyone ] [ @here ]').then(msg => {
             msg.delete(5000);
         });
 
@@ -320,10 +335,8 @@ client.on('message', (message) => {
             .addField('**Atenciosamente,**', message.author)
 			/*.setDescription()*/
         client.channels.get('493119324513632276').send({embed}).then(msg => {
-            /*msg.react('💖');
-            msg.react('💎');*/
         });
-        client.channels.get('493119324513632276').send(' | Desculpe pelo everyone... Isso é apenas um anúncio!\n\n[ @everyone ] [ @here ]').then(msg => {
+        client.channels.get('493119324513632276').send(' | Pedimos desculpa pelo everyone... Isto é apenas um anúncio!\n\n[ @everyone ] [ @here ]').then(msg => {
             msg.delete(5000);
         });
 

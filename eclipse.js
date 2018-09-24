@@ -341,11 +341,11 @@ client.on('message', (message) => {
         let role = message.guild.roles.find('name', 'MUTADO');
         const ert = new Discord.RichEmbed()
             .setTitle(':warning: Opaah... Erros encontrados !')
-            .addField(':no_entry_sign: | Erro encontrado:', "Grupo ``Silenciado`` não foi encontrado porfavor crie-o!")
+            .addField(':no_entry_sign: | Erro encontrado:', "Grupo ``MUTADO`` não foi encontrado porfavor crie-o!")
             .setColor('f4eb42')
             .setTimestamp()
             .setFooter('Erro: TempMute', client.user.avatarURL)
-        if(!message.guild.roles.exists("name", "Silenciado")) return client.channels.get('493119324513632276').send(ert);
+        if(!message.guild.roles.exists("name", "MUTADO")) return client.channels.get('493119324513632276').send(ert);
 
         const erd = new Discord.RichEmbed()
             .setAuthor(message.author.tag, message.author.avatarURL)
@@ -449,7 +449,7 @@ client.on('message', (message) => {
             .setColor('f4eb42')
             .setTimestamp()
             .setFooter('Erro: TempMute', client.user.avatarURL)
-        if(!message.guild.roles.exists("name", "Silenciado")) return client.channels.get('493119324513632276').send(ert);
+        if(!message.guild.roles.exists("name", "MUTADO")) return client.channels.get('493119324513632276').send(ert);
 
         let user = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
 

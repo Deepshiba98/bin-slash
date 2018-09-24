@@ -342,7 +342,7 @@ client.on('message', (message) => {
 
     }
 
-    if(msg.startsWith(prefix + 'TEMPMUTE') || msg.startsWith(prefix + 'MUTAR') || msg.startsWith(prefix + 'MUTE')){
+    /*if(msg.startsWith(prefix + 'TEMPMUTE') || msg.startsWith(prefix + 'MUTAR') || msg.startsWith(prefix + 'MUTE')){
 
         message.delete();
 
@@ -499,6 +499,87 @@ client.on('message', (message) => {
         message.reply(':bell: | Usuário desmutado com sucesso!').then(msg => {
             msg.delete(10000);
         });
+
+    }*/
+
+    if(msg.startsWith(prefix + 'TEMPMUTE') || msg.startsWith(prefix + 'MUTAR')){
+
+        message.delete();
+
+        let user = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+
+        if(!message.member.hasPermission('KICK_MEMBERS')) return message.reply(':x: | Você não pode usar esse comando.').then(msg => {
+            msg.delete(10000);
+        });
+
+        let role = message.guild.roles.find('name', 'Silenciado');
+        const ert = new Discord.RichEmbed()
+            .setTitle(':warning: Opaah... Erros encontrados !')
+            .addField(':no_entry_sign: | Erro encontrado:', "Grupo ``Silenciado`` não foi encontrado porfavor crie-o !")
+            .setColor('f4eb42')
+            .setTimestamp()
+            .setFooter('Erro: TempMute', client.user.avatarURL)
+        if(!message.guild.roles.exists("name", "Silenciado")) return client.channels.get('456496027889827859').send(ert);
+
+        const erd = new Discord.RichEmbed()
+            .setAuthor(message.author.tag, message.author.avatarURL)
+            .setColor('RANDOM')
+            .setTimestamp()
+            .setTitle('⏰ TempMute')
+            .setDescription("*Mute membros temporariamente.*\n\n:bulb: **| /mutar ``<@membro>`` ``<tempo>`` ``<motivo>``** - *(1s = 1 Segundo)* **Modos: s/m/d/h**")
+            .addField(':twisted_rightwards_arrows: | Alternativa:', '/mutar')
+
+        if(!user) return message.channel.send(erd).then(msg => {
+            msg.delete(20000);
+        });
+
+        let time = args[1];
+
+        if(!time) return message.channel.send(erd).then(msg => {
+            msg.delete(20000);
+        });
+
+        let motivo = args.slice(2).join(" ");
+        if(!motivo) return message.channel.send(erd).then(msg => {
+            msg.delete(20000);
+        });
+
+        var tempo = ms(ms(time));
+        let embed = new Discord.RichEmbed()
+            .setAuthor(message.author.tag, message.author.avatarURL)
+            .setTitle(`:no_entry_sign: Punições - Mute Temporario`)
+            .addField(':spy: | Usuário punido:', user, true)
+            .addField(':cop: | Autor do punimento:', message.author, true)
+            .addField(':pencil: | Motivo:', motivo, true)
+            .addField('🕰 | Tempo:', tempo, true)
+            .setFooter(`ID do usuário: ${user.id}`)
+            .setTimestamp()
+            .setThumbnail(message.author.avatarURL)
+            .setColor('d62a13')
+        client.channels.get('455415724119162891').send(embed);
+
+        user.addRole(role)
+
+        message.reply('<a:sininho:456496439556571155> | Usuário punido com sucesso!').then(msg => {
+            msg.delete(10000);
+        });
+
+        setTimeout(function() {
+
+            user.removeRole(role);
+            user.send('🕰 | Seu tempo acabou... Você foi desmutado com sucesso !');
+
+            const unmutee = new Discord.RichEmbed()
+                .setAuthor(user.user.tag, user.user.avatarURL)
+                .setTimestamp()
+                .setColor('RANDOM')
+                .setThumbnail(client.user.avatarURL)
+                .setTitle(`🔇 Desmutado`)
+                .setDescription(`:spy: **|** **Usuário:**\n${user}\n:cop: **| Autor:**\n${client.user}`)
+                .setFooter(`ID do usuário: ${user.id}`)
+            client.channels.get('455415724119162891').send(unmutee)
+
+        }, ms(time));
 
     }
 

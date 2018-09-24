@@ -20,14 +20,14 @@ var hoje = new Date();
             }
             if (hh<10){
 		if(hh<01){
-		    hh = 7+hh;
+		    hh = 3+hh;
 		}
                 hh = '0'+hh;
             }
             if (min<10){
                 min = '0'+min;
             }
-            var hoje = dd+ '/' +mm+ '/' +yyyy + ' às ' + hh + ':' + min;
+            var hoje = dd+ '/' +mm+ '/' +yyyy + ' às ' + 4+hh + ':' + min;
         var hojee = dd+ '/' +mm+ '/' +yyyy;
 
 

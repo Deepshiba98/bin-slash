@@ -664,9 +664,9 @@ client.on('message', (message) => {
 
         const embed = new Discord.RichEmbed()
             .setColor('f44242')
-            .setFooter(message.author.tag, message.author.avatarURL)
+            .setFooter('Mensagem da STAFF', message.author.avatarURL)
             .setThumbnail('https://i.imgur.com/Td24sD6.png')
-            .setTitle('📢 Anúncio - My Second Life')
+            .setTitle('<:logo:493458750049484831> My Second Life')
             .setDescription(args1)
             .addField('**Atenciosamente,**', message.author)
             .setTimestamp()
@@ -675,7 +675,7 @@ client.on('message', (message) => {
 
     }
 
-    if (message.content.toLowerCase().startsWith(prefix + `ticket`)) {
+    /*if (message.content.toLowerCase().startsWith(prefix + `ticket`)) {
         
         message.delete()
 
@@ -728,7 +728,7 @@ client.on('message', (message) => {
               }, 3000);
             });
         });
-    }
+    }*/
     
 
     if(msg.startsWith(prefix + 'DENUNCIAR') || msg.startsWith(prefix + 'REPORT') || msg.startsWith(prefix + 'REPORTAR')){

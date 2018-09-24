@@ -338,7 +338,7 @@ client.on('message', (message) => {
             msg.delete(10000);
         });
 
-        let role = message.guild.roles.find('name', 'Silenciado');
+        let role = message.guild.roles.find('name', 'MUTADO');
         const ert = new Discord.RichEmbed()
             .setTitle(':warning: Opaah... Erros encontrados !')
             .addField(':no_entry_sign: | Erro encontrado:', "Grupo ``Silenciado`` não foi encontrado porfavor crie-o!")
@@ -442,7 +442,7 @@ client.on('message', (message) => {
             msg.delete(10000);
         });
 
-        let role = message.guild.roles.find('name', 'Silenciado');
+        let role = message.guild.roles.find('name', 'MUTADO');
         const ert = new Discord.RichEmbed()
             .setTitle(':warning: Opaah... Erros encontrados !')
             .addField(':no_entry_sign: | Erro encontrado:', "Grupo ``Silenciado`` não foi encontrado porfavor crie-o!")

@@ -698,6 +698,7 @@ client.on('message', (message) => {
                 READ_MESSAGES: true
             });
             message.channel.send(`:white_check_mark: O ticket foi criado! <#${c.id}>`);
+            msg.delete(6000);
             const embed = new Discord.RichEmbed()
             .setColor(0xCF40FA)
             .addField(`Olá ${message.author.username}!`, `Por favor, tente explicar por que você abriu este bilhete com o máximo de detalhes possível. Nossa equipe de apoio estará aqui em breve para ajudar.`)

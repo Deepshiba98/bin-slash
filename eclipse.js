@@ -35,13 +35,13 @@ client.on("ready", () => {
 
     console.log(' ');
     console.log(' ');
-    console.log(' ');
-    console.log(' ');
-    console.log(' ');
-    console.log(' ');
-    console.log(' ');
-    console.log(' ');
-    console.log('Iniciado com sucesso !');
+    console.log('O Second Life BOT foi iniciado com sucesso!');
+    console.log(´${hoje}´);
+    console.log(hoje);
+
+    client.channels.get('493119324513632276').send(':white_check_mark: | Bot reiniciado com sucesso !\n\nData: ' + hoje).then(msg => {
+    	msg.delete(60000)
+    })
         
     const activities = ['My Second Life RP', `Somos ${client.users.size} amiguinhos !`]
     let counter = 0

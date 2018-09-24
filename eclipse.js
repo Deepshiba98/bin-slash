@@ -681,9 +681,9 @@ client.on('message', (message) => {
 
         const reason = message.content.split(" ").slice(1).join(" ");
         if (!message.guild.roles.exists("name", "+perm")) return message.channel.send(`Este servidor não tem uma '+perm' função feita, assim que o bilhete não será aberto.\n Se você é um administrador, faça um com esse nome exatamente e dê-o aos usuários que devem poder ver bilhetes.`);
-        if (message.guild.channels.exists("name", "ticket-" + message.author.username)) return message.channel.send(`Você já possui um ticket aberto!.`).then(msg => {
+        if (message.guild.channels.exists("name", "ticket-" + message.author.username)) { message.channel.send(`Você já possui um ticket aberto!.`).then(msg => {
             msg.delete(6000);
-        });
+        })};
         message.guild.createChannel(`ticket-${message.author.username}`, "text").then(c => {
             let role = message.guild.roles.find("name", "+perm");
             let role2 = message.guild.roles.find("name", "@everyone");
@@ -699,7 +699,7 @@ client.on('message', (message) => {
                 SEND_MESSAGES: true,
                 READ_MESSAGES: true
             });
-            if (!message.channel.send(`:white_check_mark: O ticket foi criado! <#${c.id}>`).then(msg => {
+            if (!message.channel.send(`:white_check_mark: ${message.author} O seu ticket foi criado com sucesso em <#${c.id}>!`).then(msg => {
                 msg.delete(6000);
             }));
             const embed = new Discord.RichEmbed()

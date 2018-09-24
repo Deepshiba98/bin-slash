@@ -20,7 +20,7 @@ var hoje = new Date();
             }
             if (hh<10){
 		if(hh<01){
-		    hh = 3+hh;
+		    hh = 7+hh;
 		}
                 hh = '0'+hh;
             }

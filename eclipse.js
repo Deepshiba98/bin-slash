@@ -449,7 +449,7 @@ client.on('message', (message) => {
             .setColor('f4eb42')
             .setTimestamp()
             .setFooter('Erro: TempMute', client.user.avatarURL)
-        if(!message.guild.roles.exists("name", "Silenciado")) return client.channels.get('446468868047896585').send(ert);
+        if(!message.guild.roles.exists("name", "Silenciado")) return client.channels.get('493119324513632276').send(ert);
 
         let user = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
 

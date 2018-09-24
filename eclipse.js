@@ -288,10 +288,9 @@ client.on('message', (message) => {
             .setFooter(message.author.tag, message.author.avatarURL)
             .setThumbnail('https://i.imgur.com/Td24sD6.png')
             .setTitle('📢  Anúncio - My Second Life')
-            .addField('_ _', cnt)
             .addField('**Atenciosamente,**', message.author)
             .setTimestamp()
-			/*.setDescription()*/
+			.setDescription(cnt)
         client.channels.get('493119324513632276').send({embed}).then(msg => {
         });
         client.channels.get('493119324513632276').send(' | Pedimos desculpa pelo everyone... Isto é apenas um anúncio!\n\n[ @everyone ] [ @here ]').then(msg => {

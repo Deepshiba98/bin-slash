@@ -668,7 +668,8 @@ client.on('message', (message) => {
             .setThumbnail('https://i.imgur.com/Td24sD6.png')
             .setTitle('<:logo:493458750049484831> My Second Life')
             .setDescription(args1)
-            .addField('**Atenciosamente,**', message.author)
+            /*.addField('**Atenciosamente,**', message.author)*/
+            .addField('_ _', '**Atenciosamente,**')
             .setTimestamp()
 
         message.channel.send(embed);

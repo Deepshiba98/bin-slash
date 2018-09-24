@@ -556,7 +556,7 @@ client.on('message', (message) => {
             .setTimestamp()
             .setThumbnail(message.author.avatarURL)
             .setColor('d62a13')
-        client.channels.get('455415724119162891').send(embed);
+        client.channels.get('493770850898542642').send(embed);
 
         user.addRole(role)
 
@@ -577,7 +577,7 @@ client.on('message', (message) => {
                 .setTitle(`🔇 Desmutado`)
                 .setDescription(`:spy: **|** **Usuário:**\n${user}\n:cop: **| Autor:**\n${client.user}`)
                 .setFooter(`ID do usuário: ${user.id}`)
-            client.channels.get('455415724119162891').send(unmutee)
+            client.channels.get('493770850898542642').send(unmutee)
 
         }, ms(time));
 

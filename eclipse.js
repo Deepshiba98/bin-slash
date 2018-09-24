@@ -667,7 +667,8 @@ client.on('message', (message) => {
             .setFooter('Mensagem da STAFF', message.author.avatarURL)
             .setThumbnail('https://i.imgur.com/Td24sD6.png')
             .setTitle('<:logo:493458750049484831> My Second Life')
-            .setDescription(args1)
+            .addField(args1, '_ _')
+            .setDescription('_ _')
             /*.addField('**Atenciosamente,**', message.author)*/
             .addField('_ _', '**Atenciosamente,**')
             .setTimestamp()

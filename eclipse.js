@@ -105,7 +105,7 @@ client.on('message', (message) => {
         const nada = new Discord.RichEmbed()
             .setAuthor(message.guild, message.author.avatarURL)
             .setTitle(`<:logo:493458750049484831> Olá ${message.author.tag}, posso ajudar ?`)
-            .setDescription("O meu pai é o <@125324468913438720>, pois ele criou-me.\n\n**💡 | Prefixo:**\nMeu prefixo é ``/``\n\n**Servidor será aberto brevemente.**")
+            .setDescription("Eu fui criado por <@125324468913438720>, pois se encontrar algum erro/bug em mim por-favor informe.\n\n**💡 | Prefixo:**\nMeu prefixo é ``/``\n\n**Servidor será aberto brevemente.**")
             .setColor('RANDOM')
             .setThumbnail('https://i.imgur.com/Td24sD6.png')
             .setTimestamp()
@@ -141,7 +141,7 @@ client.on('message', (message) => {
                         .setDescription('*Veja informações sobre os comandos de administração.*')
                         .addField('📢 | Anúncio:', "/anuncio ``<mensagem>.``", true)
                         .addField('📰 | ChangeLog:', "/changelog ``<mensagem>.``", true)
-                        .addField('🗑 | LimparChat:', "/cc ``<2 a 100>``", true)
+                        .addField('🗑 | LimparChat:', "/cc ``<1 a 100>``", true)
                         .addField(':no_entry_sign: | Ban:', "/ban ``<@membro>`` ``<motivo>``", true)
                         .addField(':mute: | Desmutar', "/desmutar ``<@membro>``", true)
                         .addField('👢 | Kick:', "/kick ``<@membro>`` ``<motivo>``", true)
@@ -205,7 +205,7 @@ client.on('message', (message) => {
             .setColor('RANDOM')
             .setTitle('🚽 | Limpeza')
             .setThumbnail(client.user.avatarURL)
-            .setDescription("*Limpe os canais.*\n\n⛓ **| !limpar ``<2 a 100>``**\n\n:twisted_rightwards_arrows: **| Alternativas:**\n/cc, /clearchat")
+            .setDescription("*Limpe os canais.*\n\n⛓ **| /limpar ``<1 a 100>``**\n\n:twisted_rightwards_arrows: **| Alternativas:**\n/cc, /clearchat")
 
         if(isNaN(args[0])) return message.channel.send({embed}).then(msg => {
             msg.delete(20000);
@@ -345,7 +345,7 @@ client.on('message', (message) => {
             .setColor('f4eb42')
             .setTimestamp()
             .setFooter('Erro: TempMute', client.user.avatarURL)
-        if(!message.guild.roles.exists("name", "Silenciado")) return client.channels.get('446468868047896585').send(ert);
+        if(!message.guild.roles.exists("name", "Silenciado")) return client.channels.get('493119324513632276').send(ert);
 
         const erd = new Discord.RichEmbed()
             .setAuthor(message.author.tag, message.author.avatarURL)

@@ -352,7 +352,7 @@ client.on('message', (message) => {
             msg.delete(10000);
         });
 
-        let role = member.guild.roles.find('name', 'MUTADO');
+        let role = message.guild.roles.find('name', 'MUTADO');
         const ert = new Discord.RichEmbed()
             .setTitle(':warning: Opaah... Erros encontrados !')
             .addField(':no_entry_sign: | Erro encontrado:', "Grupo ``MUTADO`` não foi encontrado porfavor crie-o!")
@@ -407,7 +407,7 @@ client.on('message', (message) => {
             msg.react('⏰');
         });
 
-        member.addRole(role)
+        user.addRole(role)
 
         const completo = new Discord.RichEmbed()
             .setAuthor(message.author.tag, message.author.avatarURL)
@@ -431,7 +431,7 @@ client.on('message', (message) => {
 
             if(!user.roles.has(role.id)) return;
 
-            member.removeRole(role);
+            user.removeRole(role);
             user.send('⏰ | Seu tempo acabou... Você foi desmutado com sucesso!');
 
             const unmutee = new Discord.RichEmbed()
@@ -456,7 +456,7 @@ client.on('message', (message) => {
             msg.delete(10000);
         });
 
-        let role = member.guild.roles.find('name', 'MUTADO');
+        let role = message.guild.roles.find('name', 'MUTADO');
         const ert = new Discord.RichEmbed()
             .setTitle(':warning: Opaah... Erros encontrados !')
             .addField(':no_entry_sign: | Erro encontrado:', "Grupo ``MUTADO`` não foi encontrado porfavor crie-o!")
@@ -483,7 +483,7 @@ client.on('message', (message) => {
             msg.delete(10000);
         });
 
-        member.removeRole(role);
+        user.removeRole(role);
         user.send('⏰ | Você foi desmutado com sucesso!');
 
         const unmutee = new Discord.RichEmbed()

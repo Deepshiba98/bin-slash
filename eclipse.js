@@ -8,7 +8,7 @@ var prefix = "/";
 var hoje = new Date();
             var dd = hoje.getDate();
             var mm = hoje.getMonth()+1;
-            var hh = hoje.getHours()-3;
+            var hh = hoje.getHours()+1;
             var min = hoje.getMinutes();
             var ss = hoje.getSeconds();
             var yyyy = hoje.getFullYear();
@@ -27,7 +27,7 @@ var hoje = new Date();
             if (min<10){
                 min = '0'+min;
             }
-            var hoje = dd+ '/' +mm+ '/' +yyyy + ' às ' + 4+hh + ':' + min;
+            var hoje = dd+ '/' +mm+ '/' +yyyy + ' às ' + hh + ':' + min;
         var hojee = dd+ '/' +mm+ '/' +yyyy;
 
 

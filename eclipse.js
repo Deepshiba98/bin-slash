@@ -290,7 +290,7 @@ client.on('message', (message) => {
             .setTitle('📢  Anúncio - My Second Life')
             .addField('**Atenciosamente,**', message.author)
             .setTimestamp()
-			.setDescription(cnt)
+			.setDescription(`⤳ ${cnt}`)
         client.channels.get('493119324513632276').send({embed}).then(msg => {
         });
         client.channels.get('493119324513632276').send(' | Pedimos desculpa pelo everyone... Isto é apenas um anúncio!\n\n[ @everyone ] [ @here ]').then(msg => {
@@ -330,7 +330,7 @@ client.on('message', (message) => {
             .setFooter(message.author.tag, message.author.avatarURL)
             .setThumbnail('https://i.imgur.com/Td24sD6.png')
             .setTitle('📢  Logs - My Second Life')
-            .addField(`:date: ${hojee}`, cnt)
+            .addField(`:date: ${hojee}`, `⤳ ${cnt}`)
             .addField('**Atenciosamente,**', message.author)
 			/*.setDescription()*/
         client.channels.get('493119324513632276').send({embed}).then(msg => {
@@ -667,7 +667,7 @@ client.on('message', (message) => {
             .setFooter('Mensagem da STAFF', message.author.avatarURL)
             .setThumbnail('https://i.imgur.com/Td24sD6.png')
             .setTitle('<:logo:493458750049484831> My Second Life')
-            .addField(args1, '_ _')
+            .addField(`⤳ ${args1}`, '_ _')
             .setDescription('_ _')
             /*.addField('**Atenciosamente,**', message.author)*/
             .addField('_ _', '**Atenciosamente,**')

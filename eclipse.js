@@ -407,7 +407,7 @@ client.on('message', (message) => {
             msg.react('⏰');
         });
 
-        user.addRole(role)
+        member.addRole(role)
 
         const completo = new Discord.RichEmbed()
             .setAuthor(message.author.tag, message.author.avatarURL)
@@ -431,7 +431,7 @@ client.on('message', (message) => {
 
             if(!user.roles.has(role.id)) return;
 
-            user.removeRole(role);
+            member.removeRole(role);
             user.send('⏰ | Seu tempo acabou... Você foi desmutado com sucesso!');
 
             const unmutee = new Discord.RichEmbed()
@@ -483,7 +483,7 @@ client.on('message', (message) => {
             msg.delete(10000);
         });
 
-        user.removeRole(role);
+        member.removeRole(role);
         user.send('⏰ | Você foi desmutado com sucesso!');
 
         const unmutee = new Discord.RichEmbed()

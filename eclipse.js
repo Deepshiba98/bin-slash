@@ -676,6 +676,9 @@ client.on('message', (message) => {
     }
 
     if (message.content.toLowerCase().startsWith(prefix + `ticket`)) {
+        
+        message.delete()
+
         const reason = message.content.split(" ").slice(1).join(" ");
         if (!message.guild.roles.exists("name", "+perm")) return message.channel.send(`Este servidor não tem uma '+perm' função feita, assim que o bilhete não será aberto.\n Se você é um administrador, faça um com esse nome exatamente e dê-o aos usuários que devem poder ver bilhetes.`);
         if (message.guild.channels.exists("name", "ticket-" + message.author.username)) return message.channel.send(`Você já possui um ticket aberto!.`);
@@ -694,7 +697,7 @@ client.on('message', (message) => {
                 SEND_MESSAGES: true,
                 READ_MESSAGES: true
             });
-            message.channel.send(`:white_check_mark: O ticket com criado! <#${c.id}>`);
+            message.channel.send(`:white_check_mark: O ticket foi criado! <#${c.id}>`);
             const embed = new Discord.RichEmbed()
             .setColor(0xCF40FA)
             .addField(`Olá ${message.author.username}!`, `Por favor, tente explicar por que você abriu este bilhete com o máximo de detalhes possível. Nossa equipe de apoio estará aqui em breve para ajudar.`)
@@ -704,6 +707,7 @@ client.on('message', (message) => {
     }
     if (message.content.toLowerCase().startsWith(prefix + `fechar`)) {
         if (!message.channel.name.startsWith(`ticket-`)) return message.channel.send(`Este comando só pode ser usado em tickets!`);
+        msg.delete(10000);
     
         message.channel.send(`Você tem certeza?\nPara confirmar use  \`*confirmar\`. Caso não haja resposta, cancelaremos o pedido de encerramento do ticket em 10 segundos..`)
         .then((m) => {

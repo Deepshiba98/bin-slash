@@ -40,7 +40,7 @@ client.on("ready", () => {
     console.log(' ');
     console.log(' ');
 
-    client.channels.get('493119324513632276').send(':white_check_mark: | Bot reiniciado com sucesso !\n\nData: ' + hoje).then(msg => {
+    client.channels.get('493770850898542642').send(':white_check_mark: | Bot reiniciado com sucesso !\n\nData: ' + hoje).then(msg => {
     	msg.delete(60000)
     })
         
@@ -92,8 +92,8 @@ client.on('message', (message) => {
           .addField('Canal:', `<#${message.channel.id}>`)
           .setColor('f7db60')
           .setFooter(client.user.username, client.user.avatarURL)
-      client.channels.get('493119324513632276').send(embed);
-      client.channels.get('493119324513632276').send('<@&421714694672351237>').then(msg => {
+      client.channels.get('493770850898542642').send(embed);
+      client.channels.get('493770850898542642').send('<@&421714694672351237>').then(msg => {
           msg.delete(10000);
       })
         return;
@@ -142,7 +142,7 @@ client.on('message', (message) => {
                         .setDescription('*Veja informações sobre os comandos de administração.*')
                         .addField('📢 | Anúncio:', "/anuncio ``<mensagem>.``", true)
                         .addField('📰 | ChangeLog:', "/changelog ``<mensagem>.``", true)
-                        .addField('🗑 | LimparChat:', "/cc ``<1 a 100>``", true)
+                        .addField('🗑 | LimparChat:', "/cc ``<2 a 100>``", true)
                         .addField(':no_entry_sign: | Ban:', "/ban ``<@membro>`` ``<motivo>``", true)
                         .addField(':mute: | Desmutar', "/desmutar ``<@membro>``", true)
                         .addField('👢 | Kick:', "/kick ``<@membro>`` ``<motivo>``", true)
@@ -175,6 +175,7 @@ client.on('message', (message) => {
                         .addField('🖼 | Avatar:', "/avatar ``<@membro>``", true)
                         .addField('🛡 | Denúncia:', "/denunciar ``<@membro>`` ``<motivo>`` - ``<prova>``")
                         .addField('💡 | Sugestão:', "/sugerir ``<sugestão>``")
+                        /*.addField('👨‍⚖️ | Tickets:', "/ticket", true)*/
                         .setThumbnail(client.user.avatarURL)
 
                     message.author.send(comandinhos).then(msg1 => {
@@ -206,7 +207,7 @@ client.on('message', (message) => {
             .setColor('RANDOM')
             .setTitle('🚽 | Limpeza')
             .setThumbnail(client.user.avatarURL)
-            .setDescription("*Limpe os canais.*\n\n⛓ **| /limpar ``<1 a 100>``**\n\n:twisted_rightwards_arrows: **| Alternativas:**\n/cc, /clearchat")
+            .setDescription("*Limpe os canais.*\n\n⛓ **| /limpar ``<2 a 100>``**\n\n:twisted_rightwards_arrows: **| Alternativas:**\n/cc, /clearchat")
 
         if(isNaN(args[0])) return message.channel.send({embed}).then(msg => {
             msg.delete(20000);
@@ -291,9 +292,9 @@ client.on('message', (message) => {
             .addField('**Atenciosamente,**', message.author)
             .setTimestamp()
 			.setDescription(`⤳ ${cnt}`)
-        client.channels.get('493119324513632276').send({embed}).then(msg => {
+        client.channels.get('493770850898542642').send({embed}).then(msg => {
         });
-        client.channels.get('493119324513632276').send(' | Pedimos desculpa pelo everyone... Isto é apenas um anúncio!\n\n[ @everyone ] [ @here ]').then(msg => {
+        client.channels.get('493770850898542642').send(' | Pedimos desculpa pelo everyone... Isto é apenas um anúncio!\n\n[ @everyone ] [ @here ]').then(msg => {
             msg.delete(5000);
         });
 
@@ -318,11 +319,11 @@ client.on('message', (message) => {
             .setFooter(message.author.tag, message.author.avatarURL)
             .setTitle('📢 ChangeLog')
 			.setDescription(cnt)
-        client.channels.get('493119324513632276').send({embed}).then(msg => {
+        client.channels.get('493770850898542642').send({embed}).then(msg => {
             msg.react('💖');
             msg.react('💎');
         });
-        client.channels.get('493119324513632276').send(':bell: | Desculpe pelo everyone... Isso é apenas um anúncio!\n\n[ @everyone ] [ @here ]').then(msg => {
+        client.channels.get('493770850898542642').send(':bell: | Desculpe pelo everyone... Isso é apenas um anúncio!\n\n[ @everyone ] [ @here ]').then(msg => {
             msg.delete(5000);
         });*/
         const embed = new Discord.RichEmbed()
@@ -333,9 +334,9 @@ client.on('message', (message) => {
             .addField(`:date: ${hojee}`, `⤳ ${cnt}`)
             .addField('**Atenciosamente,**', message.author)
 			/*.setDescription()*/
-        client.channels.get('493119324513632276').send({embed}).then(msg => {
+        client.channels.get('493770850898542642').send({embed}).then(msg => {
         });
-        client.channels.get('493119324513632276').send(' | Pedimos desculpa pelo everyone... Isto é apenas um anúncio!\n\n[ @everyone ] [ @here ]').then(msg => {
+        client.channels.get('493770850898542642').send(' | Pedimos desculpa pelo everyone... Isto é apenas um anúncio!\n\n[ @everyone ] [ @here ]').then(msg => {
             msg.delete(5000);
         });
 
@@ -358,7 +359,7 @@ client.on('message', (message) => {
             .setColor('f4eb42')
             .setTimestamp()
             .setFooter('Erro: TempMute', client.user.avatarURL)
-        if(!message.guild.roles.exists("name", "MUTADO")) return client.channels.get('493119324513632276').send(ert);
+        if(!message.guild.roles.exists("name", "MUTADO")) return client.channels.get('493770850898542642').send(ert);
 
         const erd = new Discord.RichEmbed()
             .setAuthor(message.author.tag, message.author.avatarURL)
@@ -402,7 +403,7 @@ client.on('message', (message) => {
             .setTimestamp()
             .setThumbnail(message.author.avatarURL)
             .setColor('d62a13')
-        client.channels.get('493119324513632276').send({embed}).then(msg => {
+        client.channels.get('493770850898542642').send({embed}).then(msg => {
             msg.react('⏰');
         });
 
@@ -441,7 +442,7 @@ client.on('message', (message) => {
                 .setTitle(`🔇 Desmutado`)
                 .setDescription(`:spy: **|** **Usuário:**\n${user}\n:cop: **| Autor:**\n${client.user}`)
                 .setFooter(`ID do usuário: ${user.id}`)
-            client.channels.get('493119324513632276').send(unmutee)
+            client.channels.get('493770850898542642').send(unmutee)
 
         }, ms(time));
 
@@ -462,7 +463,7 @@ client.on('message', (message) => {
             .setColor('f4eb42')
             .setTimestamp()
             .setFooter('Erro: TempMute', client.user.avatarURL)
-        if(!message.guild.roles.exists("name", "MUTADO")) return client.channels.get('493119324513632276').send(ert);
+        if(!message.guild.roles.exists("name", "MUTADO")) return client.channels.get('493770850898542642').send(ert);
 
         let user = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
 
@@ -493,7 +494,7 @@ client.on('message', (message) => {
             .setTitle(`🔇 Desmutado`)
             .setDescription(`:spy: **|** **Usuário:**\n${user}\n:cop: **| Autor:**\n${message.author}`)
             .setFooter(`ID do usuário: ${user.id}`)
-        client.channels.get('493119324513632276').send(unmutee);
+        client.channels.get('493770850898542642').send(unmutee);
 
         message.reply(':bell: | Usuário desmutado com sucesso!').then(msg => {
             msg.delete(10000);
@@ -539,7 +540,7 @@ client.on('message', (message) => {
             .setTimestamp()
             .setThumbnail(message.author.avatarURL)
             .setColor('d62a13')
-        client.channels.get('493119324513632276').send({embed}).then(msg => {
+        client.channels.get('493770850898542642').send({embed}).then(msg => {
             msg.react('🚫');
         });
 
@@ -589,7 +590,7 @@ client.on('message', (message) => {
             .setTimestamp()
             .setThumbnail(message.author.avatarURL)
             .setColor('d62a13')
-        client.channels.get('493119324513632276').send({embed}).then(msg => {
+        client.channels.get('493770850898542642').send({embed}).then(msg => {
             msg.react('👢');
         });
 
@@ -774,7 +775,7 @@ client.on('message', (message) => {
             .addField('📝 | Motivo:', motivo[0], true)
             .addField('🖼 | Prova:', motivo[1], true)
             .setThumbnail(client.user.avatarURL)
-        client.channels.get('493119324513632276').send(reportado).then(msg => {
+        client.channels.get('493770850898542642').send(reportado).then(msg => {
             msg.react('✅');
             msg.react('❌');
         });
@@ -810,7 +811,7 @@ client.on('message', (message) => {
             .setDescription('Faça sua sugestão, /sugerir.')
             .addField('📝 | Sugestão:', sugerindo)
             .addField('<:visionario:452700782001913867> | Autor:', message.author, true)
-        client.channels.get('493119324513632276').send({embed}).then(msg => {
+        client.channels.get('493770850898542642').send({embed}).then(msg => {
             msg.react('👍');
             msg.react('👎');
         });
@@ -875,18 +876,18 @@ client.on('message', (message) => {
             .addField(':postbox: | Informações:', motivo)
             .setTimestamp()
 
-        client.channels.get('493119324513632276').send({embed}).then(msg => {
+        client.channels.get('493770850898542642').send({embed}).then(msg => {
 
             msg.react('👍');
             msg.react('👎');
 
         });
 
-        client.channels.get('493119324513632276').send('@everyone').then(msg => {
+        client.channels.get('493770850898542642').send('@everyone').then(msg => {
             msg.delete(5000);
         });
 
-        message.reply(':white_check_mark: | Enquete criada com sucesso, confira em <#493119324513632276>.').then(msg => {
+        message.reply(':white_check_mark: | Enquete criada com sucesso, confira em <#493770850898542642>.').then(msg => {
             msg.delete(10000);
         });
 

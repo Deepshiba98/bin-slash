@@ -342,6 +342,36 @@ client.on('message', (message) => {
 
     }
 
+    if(msg.startsWith(prefix + 'ATUALIZAÇAO')){
+
+        message.delete();
+
+        if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply(':x: | Você não pode usar esse comando.').then(msg => {
+            msg.delete(10000);
+        });
+
+        const cnt = message.content.slice(prefix.length + 10);
+
+        if(!cnt) return message.reply(':x: | Você não adicionou uma mensagem.').then(msg => {
+            msg.delete(10000);
+        });
+
+        const embed = new Discord.RichEmbed()
+            .setColor('f44242')
+            .setFooter(message.author.tag, message.author.avatarURL)
+            .setThumbnail('https://i.imgur.com/Td24sD6.png')
+            .setTitle('⭐ Atualização - My Second Life')
+            .addField(`:date: ${hojee}`, `⤳ ${cnt}`)
+            .addField('**Atenciosamente,**', message.author)
+			/*.setDescription()*/
+        client.channels.get('485215309553205262').send({embed}).then(msg => {
+        });
+        client.channels.get('485215309553205262').send(' | Pedimos desculpa pelo everyone... Isto é apenas um anúncio!\n\n[ @everyone ] [ @here ]').then(msg => {
+            msg.delete(5000);
+        });
+
+    }
+
     if(msg.startsWith(prefix + 'TEMPMUTE') || msg.startsWith(prefix + 'MUTAR') || msg.startsWith(prefix + 'MUTE')){
 
         message.delete();

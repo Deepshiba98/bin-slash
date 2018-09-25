@@ -628,13 +628,13 @@ client.on('message', (message) => {
         const embed = new Discord.RichEmbed()
             .setAuthor(message.author.tag, message.author.avatarURL)
             .setTitle('💁 Informações do Servidor')
-            .setDescription('Informações sobre o servidor.')
+            /*.setDescription('Informações sobre o servidor.')*/
             .addField('⚙ | ID:', message.guild.id, true)
             .addField(':crown: | Pai de todos:', message.guild.owner, true)
-            .addField(':earth_americas: | Local:', regiao[message.guild.region], true)
-            .addField(':date: | Criado em:', moment(message.guild.createdAt).format('DD/MM/YY') + ' às ' + moment(message.guild.createdAt).format('HH:mm'), true)
-            .addField('<:ai:456100450786213938> | Entrou em:', moment(message.guild.joinedAt).format('DD/MM/YY') + ' às ' + moment(message.guild.joinedAt).format('HH:mm'), true)
-            .addField('<:visionario:452700782001913867> | Total de:', message.guild.memberCount, true)
+            .addField(':earth_americas: | Servidor situado em:', regiao[message.guild.region], true)
+            .addField(':date: | Discord Criado em:', moment(message.guild.createdAt).format('DD/MM/YY') + ' às ' + moment(message.guild.createdAt).format('HH:mm'), true)
+            .addField('🚪 | Entrou em:', moment(message.guild.joinedAt).format('DD/MM/YY') + ' às ' + moment(message.guild.joinedAt).format('HH:mm'), true)
+            .addField('♥️ | Total de Membros:', message.guild.memberCount, true)
             .setColor('RANDOM')
             .setThumbnail(client.user.avatarURL)
             .setTimestamp()
@@ -646,7 +646,7 @@ client.on('message', (message) => {
 
         message.delete();
 
-        if(message.author.id !== '318511700808695818') return;
+        if(message.author.id !== '125324468913438720') return;
 
         let args1 = args.slice(0).join(" ").split('-');
 

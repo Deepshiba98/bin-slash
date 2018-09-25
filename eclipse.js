@@ -292,9 +292,9 @@ client.on('message', (message) => {
             .addField('**Atenciosamente,**', message.author)
             .setTimestamp()
 			.setDescription(`⤳ ${cnt}`)
-        client.channels.get('493770850898542642').send({embed}).then(msg => {
+        client.channels.get('494107386550681600').send({embed}).then(msg => {
         });
-        client.channels.get('493770850898542642').send(' | Pedimos desculpa pelo everyone... Isto é apenas um anúncio!\n\n[ @everyone ] [ @here ]').then(msg => {
+        client.channels.get('494107386550681600').send(' | Pedimos desculpa pelo everyone... Isto é apenas um anúncio!\n\n[ @everyone ] [ @here ]').then(msg => {
             msg.delete(5000);
         });
 
@@ -334,9 +334,9 @@ client.on('message', (message) => {
             .addField(`:date: ${hojee}`, `⤳ ${cnt}`)
             .addField('**Atenciosamente,**', message.author)
 			/*.setDescription()*/
-        client.channels.get('493770850898542642').send({embed}).then(msg => {
+        client.channels.get('494106821892767745').send({embed}).then(msg => {
         });
-        client.channels.get('493770850898542642').send(' | Pedimos desculpa pelo everyone... Isto é apenas um anúncio!\n\n[ @everyone ] [ @here ]').then(msg => {
+        client.channels.get('494106821892767745').send(' | Pedimos desculpa pelo everyone... Isto é apenas um anúncio!\n\n[ @everyone ] [ @here ]').then(msg => {
             msg.delete(5000);
         });
 
@@ -877,18 +877,18 @@ client.on('message', (message) => {
             .addField(':postbox: | Informações:', motivo)
             .setTimestamp()
 
-        client.channels.get('493770850898542642').send({embed}).then(msg => {
+        client.channels.get('494106366684692482').send({embed}).then(msg => {
 
             msg.react('👍');
             msg.react('👎');
 
         });
 
-        client.channels.get('493770850898542642').send('@everyone').then(msg => {
+        client.channels.get('494106366684692482').send('@everyone').then(msg => {
             msg.delete(5000);
         });
 
-        message.reply(':white_check_mark: | Enquete criada com sucesso, confira em <#493770850898542642>.').then(msg => {
+        message.reply(':white_check_mark: | Enquete criada com sucesso, confira em <#494106366684692482>.').then(msg => {
             msg.delete(10000);
         });
 

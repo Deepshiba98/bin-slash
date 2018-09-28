@@ -262,18 +262,19 @@ client.on('message', (message) => {
         message.delete();
 
         const embed = new Discord.RichEmbed()
-            .setAuthor(message.author.tag, message.author.avatarURL)
-            .setColor('RANDOM')
-            .setFooter(`Comando usado: ${message.content}`)
+            /*.setAuthor(message.author.tag, message.author.avatarURL)*/
+            .setColor('f44242')
+            /*.setFooter(`Comando usado: ${message.content}`)*/
+            .setFooter(message.author.tag, message.author.avatarURL)
             .setTimestamp()
             .setThumbnail('https://i.imgur.com/Td24sD6.png')
             .setTitle('💁 | IP do Servidor de FiveM ')
             /*.setDescription('*Requisitos para tag youtubers, utilize /requisitos.*')*/
             .addField('*My Second Life*', 'BREVEMENTE.', true)
-            .addField(':twisted_rightwards_arrows: | Alternativas:', '/ip, /ipserver, /serverip')
+            /*.addField(':twisted_rightwards_arrows: | Alternativas:', '/ip, /ipserver, /serverip')*/
         message.channel.send({embed}).then(msg => {
-            msg.delete(25000);
-            msg.react('💖');
+            msg.delete(250000);
+            msg.react('493458750049484831')
         });
 
     }

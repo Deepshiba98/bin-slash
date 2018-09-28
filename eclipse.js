@@ -106,7 +106,7 @@ client.on('message', (message) => {
         const nada = new Discord.RichEmbed()
             .setAuthor(message.guild, message.author.avatarURL)
             .setTitle(`<:logo:493458750049484831> Olá ${message.author.tag}, posso ajudar ?`)
-            .setDescription("Eu sou um rabô e fui criado pelo <@125324468913438720>, pois se encontrar algum erro/bug em mim por-favor informe a STAFF.\n\n**💡 | Prefixo:**\nMeu prefixo é ``/``\n\n**Servidor será aberto brevemente.**")
+            .setDescription("Eu sou um robô e fui criado pelo <@125324468913438720>, pois se encontrar algum erro/bug em mim por-favor informe a STAFF.\n\n**💡 | Prefixo:**\nMeu prefixo é ``/``\n\n**Servidor será aberto brevemente.**")
             .setColor('RANDOM')
             .setThumbnail('https://i.imgur.com/Td24sD6.png')
             .setTimestamp()
@@ -171,7 +171,8 @@ client.on('message', (message) => {
                         .setDescription('*Veja informações sobre outros comandos.*')
                         .addField('🏓 | Ping:', 'Veja seu ping.', true)
                         /*.addField('<:youtuber:454339303821279242> | Requisitos:', "/requisitos", true)*/
-                        .addField('💁 | Informações do Servidor:', "/serverinfo", true)
+                        .addField('💁 | Ver IP do Servidor FiveM:', "/ip", true)
+                        .addField('🛈 | Informações do Servidor:', "/serverinfo", true)
                         .addField('🖼 | Avatar:', "/avatar ``<@membro>``", true)
                         .addField('🛡 | Denúncia:', "/denunciar ``<@membro>`` ``<motivo>`` - ``<prova>``")
                         .addField('💡 | Sugestão:', "/sugerir ``<sugestão>``")
@@ -255,6 +256,27 @@ client.on('message', (message) => {
         });
 
     }*/
+
+    if(msg.startsWith(prefix + 'IP') || msg.startsWith(prefix + 'SERVERIP') || msg.startsWith(prefix + 'IPSERVER')){
+
+        message.delete();
+
+        const embed = new Discord.RichEmbed()
+            .setAuthor(message.author.tag, message.author.avatarURL)
+            .setColor('RANDOM')
+            .setFooter(`Comando usado: ${message.content}`)
+            .setTimestamp()
+            .setThumbnail('https://i.imgur.com/Td24sD6.png')
+            .setTitle('💁 | IP do Servidor de FiveM ')
+            /*.setDescription('*Requisitos para tag youtubers, utilize /requisitos.*')*/
+            .addField('*My Second Life*', 'BREVEMENTE.', true)
+            .addField(':twisted_rightwards_arrows: | Alternativas:', '/ip, /ipserver, /serverip')
+        message.channel.send({embed}).then(msg => {
+            msg.delete(25000);
+            msg.react('💖');
+        });
+
+    }
 
     if(msg.startsWith(prefix + 'ANUNCIO')){
 

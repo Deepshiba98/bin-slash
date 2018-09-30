@@ -387,9 +387,9 @@ client.on('message', (message) => {
             .addField(`:date: ${hojee}`, `⤳ ${cnt}`)
             .addField('**Atenciosamente,**', message.author)
 			/*.setDescription()*/
-        client.channels.get('485215309553205262').send({embed}).then(msg => {
+        client.channels.get('496004454458589213').send({embed}).then(msg => {
         });
-        client.channels.get('485215309553205262').send(' | Pedimos desculpa pelo everyone... Isto é apenas um anúncio!\n\n[ @everyone ] [ @here ]').then(msg => {
+        client.channels.get('496004454458589213').send(' | Pedimos desculpa pelo everyone... Isto é apenas um anúncio!\n\n[ @everyone ] [ @here ]').then(msg => {
             msg.delete(5000);
         });
 
@@ -962,7 +962,7 @@ client.on('guildMemberAdd', member => {
         .setAuthor(`${member.user.tag}`, client.user.avatarURL)
         .addField('🍻 | Seja bem-vindo(a)', 'Você acabou de entrar no discord da rede <:logo:493458750049484831> **My Second Life RP** o melhor servidor de FiveM para se jogar.\n', true)
         .addField('_ _', 'Aqui você pode interagir com diversas pessoas, fazer amigos e muito mais! Qualquer dúvida, chame algum dos nossos membros da STAFF.\n\n', true)
-        .addField('⭐ | Novidades', 'Veja todas as novidades em <#485215309553205262>.\n\n', true)
+        .addField('⭐ | Novidades', 'Veja todas as novidades em <#496004454458589213>.\n\n', true)
         .addField(':warning:  | Fique atento!', 'Leia as nossas <#485218949890572304> e evite ser punido!\n', true)
         .addField('_ _', 'Sabia que o nosso servidor conta com um sistema de ranks exclusivos? Evolua o seu rank integarindo com os nossos usuários em canais de conversas e chegue ao TOP!\n\n', true)
         .setFooter(`My Second Life RP • © Todos direitos reservados.`, 'https://i.imgur.com/Td24sD6.png')

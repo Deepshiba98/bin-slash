@@ -108,7 +108,7 @@ client.on('message', (message) => {
             .setTitle(`<:logo:493458750049484831> Olá ${message.author.tag}, posso ajudar ?`)
             .setDescription("Eu sou um robô e fui criado pelo <@125324468913438720>, pois se encontrar algum erro/bug em mim por-favor informe a STAFF.\n\n**💡 | Prefixo:**\nMeu prefixo é ``/``\n\n**Servidor será aberto brevemente.**")
             .setColor('RANDOM')
-            .setThumbnail('https://i.imgur.com/Td24sD6.png')
+            .setThumbnail('https://i.imgur.com/ZTSinAX.png')
             .setTimestamp()
 
         message.author.send(nada).then(msg => {
@@ -267,14 +267,14 @@ client.on('message', (message) => {
             /*.setFooter(`Comando usado: ${message.content}`)*/
             .setFooter(message.author.tag, message.author.avatarURL)
             .setTimestamp()
-            .setThumbnail('https://i.imgur.com/Td24sD6.png')
+            .setThumbnail('https://i.imgur.com/ZTSinAX.png')
             .setTitle('💁 | IP do Servidor de FiveM ')
             /*.setDescription('*Requisitos para tag youtubers, utilize /requisitos.*')*/
             .addField('*My Second Life*', 'BREVEMENTE.', true)
             /*.addField(':twisted_rightwards_arrows: | Alternativas:', '/ip, /ipserver, /serverip')*/
         message.channel.send({embed}).then(msg => {
             msg.delete(250000);
-            msg.react('493458750049484831')
+            msg.react('496393769646817291')
         });
 
     }
@@ -310,12 +310,13 @@ client.on('message', (message) => {
         const embed = new Discord.RichEmbed()
             .setColor('f44242')
             .setFooter(message.author.tag, message.author.avatarURL)
-            .setThumbnail('https://i.imgur.com/Td24sD6.png')
+            .setThumbnail('https://i.imgur.com/ZTSinAX.png')
             .setTitle('📢  Anúncio - My Second Life')
             .addField('**Atenciosamente,**', message.author)
             .setTimestamp()
 			.setDescription(`⤳ ${cnt}`)
         client.channels.get('494107386550681600').send({embed}).then(msg => {
+            msg.react('496393769646817291')
         });
         client.channels.get('494107386550681600').send(' | Pedimos desculpa pelo everyone... Isto é apenas um anúncio!\n\n[ @everyone ] [ @here ]').then(msg => {
             msg.delete(5000);
@@ -352,12 +353,13 @@ client.on('message', (message) => {
         const embed = new Discord.RichEmbed()
             .setColor('f44242')
             .setFooter(message.author.tag, message.author.avatarURL)
-            .setThumbnail('https://i.imgur.com/Td24sD6.png')
+            .setThumbnail('https://i.imgur.com/ZTSinAX.png')
             .setTitle('📢  Logs - My Second Life')
             .addField(`:date: ${hojee}`, `⤳ ${cnt}`)
             .addField('**Atenciosamente,**', message.author)
 			/*.setDescription()*/
         client.channels.get('494106821892767745').send({embed}).then(msg => {
+            msg.react('496393769646817291')
         });
         client.channels.get('494106821892767745').send(' | Pedimos desculpa pelo everyone... Isto é apenas um anúncio!\n\n[ @everyone ] [ @here ]').then(msg => {
             msg.delete(5000);
@@ -382,12 +384,13 @@ client.on('message', (message) => {
         const embed = new Discord.RichEmbed()
             .setColor('f44242')
             .setFooter(message.author.tag, message.author.avatarURL)
-            .setThumbnail('https://i.imgur.com/Td24sD6.png')
+            .setThumbnail('https://i.imgur.com/ZTSinAX.png')
             .setTitle('⭐ Atualização - My Second Life')
             .addField(`:date: ${hojee}`, `⤳ ${cnt}`)
             .addField('**Atenciosamente,**', message.author)
 			/*.setDescription()*/
         client.channels.get('496004454458589213').send({embed}).then(msg => {
+            msg.react('496393769646817291')
         });
         client.channels.get('496004454458589213').send(' | Pedimos desculpa pelo everyone... Isto é apenas um anúncio!\n\n[ @everyone ] [ @here ]').then(msg => {
             msg.delete(5000);
@@ -720,7 +723,7 @@ client.on('message', (message) => {
         const embed = new Discord.RichEmbed()
             .setColor('f44242')
             .setFooter('Mensagem da STAFF', message.author.avatarURL)
-            .setThumbnail('https://i.imgur.com/Td24sD6.png')
+            .setThumbnail('https://i.imgur.com/ZTSinAX.png')
             .setTitle('<:logo:493458750049484831> My Second Life')
             .addField(`⤳ ${args1}`, '_ _')
             .setDescription('_ _')
@@ -925,7 +928,7 @@ client.on('message', (message) => {
             const embed = new Discord.RichEmbed()
             .setColor('f44242')
             .setFooter('Autor: ' + message.author.tag, message.author.avatarURL)
-            .setThumbnail('https://i.imgur.com/Td24sD6.png')
+            .setThumbnail('https://i.imgur.com/ZTSinAX.png')
             .setTitle(':loudspeaker: Votação')
             .addField(':postbox: | Informações:', motivo)
             .setTimestamp()
@@ -960,15 +963,15 @@ client.on('guildMemberAdd', member => {
         .setThumbnail(avatar)
         .setDescription('_ _')
         .setAuthor(`${member.user.tag}`, client.user.avatarURL)
-        .addField('🍻 | Seja bem-vindo(a)', 'Você acabou de entrar no discord da rede <:logo:493458750049484831> **My Second Life RP** o melhor servidor de FiveM para se jogar.\n', true)
+        .addField('🍻 | Seja bem-vindo(a)', 'Você acabou de entrar no discord da rede <:pin:496393769646817291> **My Second Life RP** o melhor servidor Português de FiveM para se jogar.\n', true)
         .addField('_ _', 'Aqui você pode interagir com diversas pessoas, fazer amigos e muito mais! Qualquer dúvida, chame algum dos nossos membros da STAFF.\n\n', true)
         .addField('⭐ | Novidades', 'Veja todas as novidades em <#496004454458589213>.\n\n', true)
-        .addField(':warning:  | Fique atento!', 'Leia as nossas <#485218949890572304> e evite ser punido!\n', true)
-        .addField('_ _', 'Sabia que o nosso servidor conta com um sistema de ranks exclusivos? Evolua o seu rank integarindo com os nossos usuários em canais de conversas e chegue ao TOP!\n\n', true)
-        .setFooter(`My Second Life RP • © Todos direitos reservados.`, 'https://i.imgur.com/Td24sD6.png')
+        .addField(':warning:  | Fique atento!', '**Leia as nossas <#485218949890572304> e evite ser punido!**\n', true)
+        .addField('_ _', 'Sabia que o nosso **Discord** conta com um sistema de ranks exclusivo? Evolua o seu rank integarindo com os nossos usuários em canais de conversas e chegue ao TOP!\n\n', true)
+        .setFooter(`My Second Life RP • © Todos direitos reservados.`, 'https://i.imgur.com/ZTSinAX.png')
         .setTimestamp()
     client.channels.get('485569932449546240').send({embed}).then(msg => {
-        msg.react('493458750049484831')
+        msg.react('496393769646817291')
     });
 
     member.addRole(role);

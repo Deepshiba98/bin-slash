@@ -956,7 +956,7 @@ client.on('guildMemberAdd', member => {
 
     let avatar = member.user.avatarURL;
 
-    let role = member.guild.roles.find('name', '👤 Civil 👤');
+    let role = member.guild.roles.find('name', '👤 │Civil│ 👤');
 
     let embed = new Discord.RichEmbed()
         .setColor('RANDOM')

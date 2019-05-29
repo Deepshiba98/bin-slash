@@ -51,7 +51,7 @@ client.on("ready", () => {
         counter %= activities.length
     }, 10000)
 
-    const activities2 = ['LISTENING', 'WATCHING', 'PLAYING', 'WATCHING']
+    const activities2 = ['WATCHING', 'WATCHING']
     let counter2 = 0
     setInterval(function() {
         client.user.setActivity(activities[counter], { type: activities2[counter2] })
@@ -963,11 +963,11 @@ client.on('guildMemberAdd', member => {
         .setThumbnail(avatar)
         .setDescription('_ _')
         .setAuthor(`${member.user.tag}`, client.user.avatarURL)
-        .addField('🍻 | Seja bem-vindo(a)', 'Você acabou de entrar no discord da rede <:pin:496393769646817291> **My Second Life RP** o melhor servidor Português de FiveM para ser a sua Segunda Vida.\n', true)
-        .addField('_ _', 'Aqui você pode interagir com diversas pessoas, fazer amigos e muito mais! Qualquer dúvida, chame algum dos nossos membros da STAFF, pois eles estão cá para lhe ajudar.\n\n', true)
-        .addField('⭐ | Novidades', 'Veja todas as novidades em <#496004454458589213>.\n\n', true)
-        .addField(':warning:  | Fique atento!', '**Leia as nossas <#485218949890572304> e evite ser punido!**\n', true)
-        .addField('_ _', 'Sabia que o nosso **Discord** conta com um sistema de ranks exclusivo? Evolua o seu rank interagindo com os nossos usuários em canais de conversas e chegue ao TOP!\n\n', true)
+        .addField('🍻 | Seja bem-vindo(a)', 'Acabaste de entrar no discord da rede <:pin:496393769646817291> **My Second Life RP** a melhor comunidade Portuguesa de FiveM para ser a tua Segunda Vida.\n', true)
+        .addField('_ _', 'Aqui podes interagir com diversas pessoas, fazer amigos e muito mais! Qualquer dúvida, chama algum dos nossos membros da STAFF, pois eles estão cá para te ajudar.\n\n', true)
+        .addField('⭐ | Novidades', 'Veja todas as novidades em <#496004454458589213> & <#494106821892767745>.\n\n', true)
+        .addField(':warning:  | Fique atento!', '**Leia as nossas **REGRAS** e evita ser punido!**\n<#485218949890572304> & <#569328527632236554>\n', true)
+        .addField('_ _', 'Sabias que o nosso **Discord** conta com um sistema de ranks exclusivo? Evolui o teu rank interagindo com os nossos usuários em canais de conversas e chegue ao TOP!\n\n', true)
         .setFooter(`My Second Life RP • © Todos direitos reservados.`, 'https://i.imgur.com/ZTSinAX.png')
         .setTimestamp()
     client.channels.get('485569932449546240').send({embed}).then(msg => {

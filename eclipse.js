@@ -67,7 +67,7 @@ exports.run = async (client, message, args) => {
 
     const a = message.guild.roles.get('636672962505736214'); // Whitelisted
 
-    const filter = (reaction, user) => ['🇦'].includes(reaction.emoji.name) && user.id === message.author.id;
+    const filter = (reaction, user) => ['🇦496393769646817291'].includes(reaction.emoji.name) && user.id === message.author.id;
 
     const embed = new RichEmbed()
         .setTitle('Avaiilable Roles')

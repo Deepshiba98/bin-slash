@@ -958,7 +958,7 @@ client.on('message', (message) => {
 
 client.on('messageReactionAdd', (reaction, user) => {
 
-    let guild = bot.guilds.get(guildId);
+    let guild = client.guilds.get(guildId);
     let role = guild.roles.get(r => r.name === "👤 │Whitelisted│ 👤");
 
     if (message.channel.id === '493770850898542642') {

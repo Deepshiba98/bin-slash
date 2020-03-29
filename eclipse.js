@@ -281,39 +281,6 @@ client.on('message', (message) => {
 
     }
 
-
-    if(message.author.bot)
-    {
-        if(message.embeds)
-        {
-            const embedMsg = message.embeds.find(msg => msg.title === '');
-            if(embedMsg)
-            {
-                message.react('')
-                .then(reacton => reacton.message.react(''))
-            }
-        }
-        return;
-    }
-    if(msg.startsWith(prefix + 'teste')){
-
-        message.delete();
-
-        const embed = new Discord.RichEmbed()
-         /*.setAuthor(message.author.tag, message.author.avatarURL)*/
-         .setColor('f44242')
-         /*.setFooter(`Comando usado: ${message.content}`)*/
-         .setFooter(message.author.tag, message.author.avatarURL)
-         .setTimestamp()
-         .setThumbnail('https://i.imgur.com/ZTSinAX.png')
-         .setTitle('💁 | IP do Servidor de FiveM ')
-         /*.setDescription('*Requisitos para tag youtubers, utilize /requisitos.*')*/
-         .addField('*My Second Life*', 'BREVEMENTE.', true)
-         /*.addField(':twisted_rightwards_arrows: | Alternativas:', '/ip, /ipserver, /serverip')*/
-         message.channel.send({embed}).then(msg => {
-    });
-    }
-
     if(msg.startsWith(prefix + 'ANUNCIO')){
 
         message.delete();
@@ -986,22 +953,16 @@ client.on('message', (message) => {
 
     }
 
+
 });
 
 client.on('messageReactionAdd', (reaction, user) => {
-    if(user.bot)
-    return;
-
-    var roleName = reaction.emoji.name;
-    var role = reaction.message.guild.roles.find(role => role.name.toLowerCase() === roleName.toLowerCase());
-    var member = reaction.message.guild.members.find(member => member.id === user.id);
-
-    if(member.roles.has(role.id))
-    {
-        member.removeRole(role.id).then(member)
-    }
-    else {
-        member.addRole(role.id).then(member)
+    if (message.channel.id === '493770850898542642') {
+      if (reaction.emoji.name === '496393769646817291') {
+        const guildMember = reaction.message.guild.members.get(user.id);
+        const role = reaction.message.guild.roles.get('636672962505736214');
+        guildMember.addRole(role);
+      }
     }
 });
 

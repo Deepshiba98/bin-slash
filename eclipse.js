@@ -312,27 +312,6 @@ client.on('message', (message) => {
          /*.addField(':twisted_rightwards_arrows: | Alternativas:', '/ip, /ipserver, /serverip')*/
          message.channel.send({embed}).then(msg => {
     });
-
-    if(msg.startsWith(prefix + 'teste')){
-
-        message.delete();
-
-        const embed = new Discord.RichEmbed()
-            /*.setAuthor(message.author.tag, message.author.avatarURL)*/
-            .setColor('f44242')
-            /*.setFooter(`Comando usado: ${message.content}`)*/
-            .setFooter(message.author.tag, message.author.avatarURL)
-            .setTimestamp()
-            .setThumbnail('https://i.imgur.com/ZTSinAX.png')
-            .setTitle('💁 | IP do Servidor de FiveM ')
-            /*.setDescription('*Requisitos para tag youtubers, utilize /requisitos.*')*/
-            .addField('*My Second Life*', 'BREVEMENTE.', true)
-            /*.addField(':twisted_rightwards_arrows: | Alternativas:', '/ip, /ipserver, /serverip')*/
-        message.channel.send({embed}).then(msg => {
-            msg.delete(250000);
-            msg.react('496393769646817291')
-        });
-
     }
 
     if(msg.startsWith(prefix + 'ANUNCIO')){

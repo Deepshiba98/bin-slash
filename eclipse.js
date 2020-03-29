@@ -62,6 +62,7 @@ client.on("ready", () => {
 });
 
 exports.run = async (client, message, args) => {
+    if(msg.startsWith(prefix + 'roles')){
 
     await message.delete().catch(O_o=>{});
 

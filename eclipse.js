@@ -957,13 +957,14 @@ client.on('message', (message) => {
 });
 
 
-client.on("messageReactionAdd", (reaction, user) => {
-    if(reaction.emoji.id == '496393769646817291' && reaction.message.id === '693940529896882237') 
+client.on("messageReactionAdd", (reaction, user, message) => {
+    if(reaction.emoji.id == '496393769646817291' && reaction.message.id === '693942022641418341') 
         {
             guild.fetchMember(user) // fetch the user that reacted
                 .then((member) => 
-                {
-                    let role = member.guild.roles.find('name', '👤 │Whitelisted│ 👤');
+                {   
+                    let role = message.guild.roles.find(role => role.name === "👤 │Whitelisted│ 👤");
+                    //let role = member.guild.roles.find('name', '👤 │Whitelisted│ 👤');
                     user.addRole(role)
                     .then(() => 
                     {

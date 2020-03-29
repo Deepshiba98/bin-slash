@@ -61,54 +61,7 @@ client.on("ready", () => {
 
 });
 
-exports.run = async (client, message, args) => {
-    if(msg.startsWith(prefix + 'roles')){
 
-    await message.delete().catch(O_o=>{});
-
-    const a = message.guild.roles.get('636672962505736214'); // Whitelisted
-
-    const filter = (reaction, user) => ['🇦496393769646817291'].includes(reaction.emoji.name) && user.id === message.author.id;
-
-    const embed = new RichEmbed()
-        .setTitle('Avaiilable Roles')
-        .setDescription('')
-        .setColor(0xdd9323)
-        .setFooter(`ID: ${message.author.id}`);
-        
-    message.channel.send(embed).then(async msg => {
-
-        await msg.react('496393769646817291');
-
-        msg.awaitReactions(filter, {
-            max: 1,
-            time: 30000,
-            errors: ['time']
-        }).then(collected => {
-
-            const reaction = collected.first();
-
-            switch (reaction.emoji.name) {
-                case '496393769646817291':
-                    if (message.member.roles.has(a.id)) {
-                        msg.delete(2000);
-                        return message.channel.send('You are already in this role!').then(m => m.delete(3000));
-                    }
-                    message.member.addRole(a).catch(err => {
-                        console.log(err);
-                        return message.channel.send(`Error adding you to this role: **${err.message}**.`);
-                    });
-                    message.channel.send(`You have been added to the **${a.name}** role!`).then(m => m.delete(3000));
-                    msg.delete();
-                    break;
-            }
-        }).catch(collected => {
-            return message.channel.send(`I couldn't add you to this role!`);
-        });
-
-    });
-
-};
 
 client.on('message', (message) => {
 
@@ -307,6 +260,60 @@ client.on('message', (message) => {
     }*/
 
     if(msg.startsWith(prefix + 'IP') || msg.startsWith(prefix + 'SERVERIP') || msg.startsWith(prefix + 'IPSERVER')){
+
+        message.delete();
+
+        const embed = new Discord.RichEmbed()
+            /*.setAuthor(message.author.tag, message.author.avatarURL)*/
+            .setColor('f44242')
+            /*.setFooter(`Comando usado: ${message.content}`)*/
+            .setFooter(message.author.tag, message.author.avatarURL)
+            .setTimestamp()
+            .setThumbnail('https://i.imgur.com/ZTSinAX.png')
+            .setTitle('💁 | IP do Servidor de FiveM ')
+            /*.setDescription('*Requisitos para tag youtubers, utilize /requisitos.*')*/
+            .addField('*My Second Life*', 'BREVEMENTE.', true)
+            /*.addField(':twisted_rightwards_arrows: | Alternativas:', '/ip, /ipserver, /serverip')*/
+        message.channel.send({embed}).then(msg => {
+            msg.delete(250000);
+            msg.react('496393769646817291')
+        });
+
+    }
+
+
+    if(message.author.bot)
+    {
+        if(message.embeds)
+        {
+            const embedMsg = message.embeds.find(msg => msg.title === '');
+            if(embedMsg)
+            {
+                message.react('')
+                .then(reacton => reacton.message.react(''))
+            }
+        }
+        return;
+    }
+    if(msg.startsWith(prefix + 'teste')){
+
+        message.delete();
+
+        const embed = new Discord.RichEmbed()
+         /*.setAuthor(message.author.tag, message.author.avatarURL)*/
+         .setColor('f44242')
+         /*.setFooter(`Comando usado: ${message.content}`)*/
+         .setFooter(message.author.tag, message.author.avatarURL)
+         .setTimestamp()
+         .setThumbnail('https://i.imgur.com/ZTSinAX.png')
+         .setTitle('💁 | IP do Servidor de FiveM ')
+         /*.setDescription('*Requisitos para tag youtubers, utilize /requisitos.*')*/
+         .addField('*My Second Life*', 'BREVEMENTE.', true)
+         /*.addField(':twisted_rightwards_arrows: | Alternativas:', '/ip, /ipserver, /serverip')*/
+         message.channel.send({embed}).then(msg => {
+    });
+
+    if(msg.startsWith(prefix + 'teste')){
 
         message.delete();
 
@@ -1000,6 +1007,23 @@ client.on('message', (message) => {
 
     }
 
+});
+
+client.on('messageReactionAdd', (reaction, user) => {
+    if(user.bot)
+    return;
+
+    var roleName = reaction.emoji.name;
+    var role = reaction.message.guild.roles.find(role => role.name.toLowerCase() === roleName.toLowerCase());
+    var member = reaction.message.guild.members.find(member => member.id === user.id);
+
+    if(member.roles.has(role.id))
+    {
+        member.removeRole(role.id).then(member)
+    }
+    else {
+        member.addRole(role.id).then(member)
+    }
 });
 
 client.on('guildMemberAdd', member => {

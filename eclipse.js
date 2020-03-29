@@ -61,6 +61,54 @@ client.on("ready", () => {
 
 });
 
+exports.run = async (client, message, args) => {
+
+    await message.delete().catch(O_o=>{});
+
+    const a = message.guild.roles.get('636672962505736214'); // Whitelisted
+
+    const filter = (reaction, user) => ['🇦'].includes(reaction.emoji.name) && user.id === message.author.id;
+
+    const embed = new RichEmbed()
+        .setTitle('Avaiilable Roles')
+        .setDescription('')
+        .setColor(0xdd9323)
+        .setFooter(`ID: ${message.author.id}`);
+        
+    message.channel.send(embed).then(async msg => {
+
+        await msg.react('496393769646817291');
+
+        msg.awaitReactions(filter, {
+            max: 1,
+            time: 30000,
+            errors: ['time']
+        }).then(collected => {
+
+            const reaction = collected.first();
+
+            switch (reaction.emoji.name) {
+                case '496393769646817291':
+                    if (message.member.roles.has(a.id)) {
+                        msg.delete(2000);
+                        return message.channel.send('You are already in this role!').then(m => m.delete(3000));
+                    }
+                    message.member.addRole(a).catch(err => {
+                        console.log(err);
+                        return message.channel.send(`Error adding you to this role: **${err.message}**.`);
+                    });
+                    message.channel.send(`You have been added to the **${a.name}** role!`).then(m => m.delete(3000));
+                    msg.delete();
+                    break;
+            }
+        }).catch(collected => {
+            return message.channel.send(`I couldn't add you to this role!`);
+        });
+
+    });
+
+};
+
 client.on('message', (message) => {
 
     let msg = message.content.toUpperCase();
@@ -365,59 +413,6 @@ client.on('message', (message) => {
             msg.delete(5000);
         });
 
-    }
-
-    if(msg.startsWith(prefix + 'PRIMEIRAMSG')){
-
-        message.delete()
-
-        if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply(':x: | Você não pode usar esse comando.').then(msg => {
-            msg.delete(10000);
-        });
-
-        let args1 = message.content.slice(prefix.length + 4);
-
-        const a = message.guild.roles.get('485987998794514442'); // Moderator
-        const filter = (reaction, user) => ['496393769646817291'].includes(reaction.emoji.name) && user.id === message.author.id;
-
-        const embed = new Discord.RichEmbed()
-            .setColor('f44242')
-            .setFooter('Para poderes ter acesso às salas do discord **CLICA** no emoji abaixo.', message.author.avatarURL)
-            .setThumbnail('https://i.imgur.com/ZTSinAX.png')
-            .setTitle('🔼My Second Life🔽')
-            .addField(`⤳ ${args1}`, '_ _')
-            .setDescription('_ _')
-            /*.addField('**Atenciosamente,**', message.author)*/
-            .addField('_ _', '**Atenciosamente,**')
-            /*.setTimestamp()*/
-
-            message.channel.send(embed);
-
-        await msg.react('496393769646817291');
-
-        msg.awaitReactions(filter, {
-            max: 1,
-            time: 30000,
-            errors: ['time']
-        }).then(collected => {
-
-            const reaction = collected.first();
-
-            switch (reaction.emoji.name) {
-                case '🇦':
-                    if (message.member.roles.has(a.id)) {
-                        msg.delete(2000);
-                        return message.channel.send('Tu já tens esse cargo!').then(m => m.delete(3000));
-                    }
-                    message.member.addRole(a).catch(err => {
-                        console.log(err);
-                        return message.channel.send(`Erro ao adicionar-te esse cargo: **${err.message}**.`);
-                    });
-                    /*message.channel.send(`You have been added to the **${a.name}** role!`).then(m => m.delete(3000));
-                    msg.delete();*/
-                    break; }
-                }
-            })
     }
 
 

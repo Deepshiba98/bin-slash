@@ -99,7 +99,7 @@ client.on('message', (message) => {
           msg.delete(10000);
       })
         return;
-      }
+    }
 
     if(msg.startsWith(prefix + 'AJUDA') || msg.startsWith(prefix + 'HELP') || msg.startsWith(prefix + 'INFO')){
 
@@ -956,7 +956,7 @@ client.on('message', (message) => {
 
 });
 
-client.on('messageReactionAdd', (reaction, user) => {
+client.on('messageReactionAdd', (reaction, user, message) => {
 
     if (message.channel.id === '493770850898542642') {
       if (reaction.emoji.name === '496393769646817291') {

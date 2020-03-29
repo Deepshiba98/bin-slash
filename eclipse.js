@@ -411,14 +411,14 @@ client.on('message', (message) => {
             msg.delete(10000);
         });
 
-        let role = message.guild.roles.find('name', 'MUTADO');
+        let role = message.guild.roles.find('name', '🤐 │𝗠𝗨𝗧𝗔𝗗𝗢│ 🤐');
         const ert = new Discord.RichEmbed()
             .setTitle(':warning: Opaah... Erros encontrados !')
             .addField(':no_entry_sign: | Erro encontrado:', "Grupo ``MUTADO`` não foi encontrado porfavor crie-o!")
             .setColor('f4eb42')
             .setTimestamp()
             .setFooter('Erro: TempMute', client.user.avatarURL)
-        if(!message.guild.roles.exists("name", "MUTADO")) return client.channels.get('493770850898542642').send(ert);
+        if(!message.guild.roles.exists("name", "🤐 │𝗠𝗨𝗧𝗔𝗗𝗢│ 🤐")) return client.channels.get('493770850898542642').send(ert);
 
         const erd = new Discord.RichEmbed()
             .setAuthor(message.author.tag, message.author.avatarURL)
@@ -964,7 +964,7 @@ client.on("messageReactionAdd", (reaction, user) => {
                 .then((member) => 
                 {
                     let role = member.guild.roles.find('name', '👤 │Whitelisted│ 👤');
-                    member.addRole(role)
+                    user.addRole(role)
                     .then(() => 
                     {
                         console.log(`Added the role to ${member.displayName}`);

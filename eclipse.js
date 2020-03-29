@@ -956,9 +956,12 @@ client.on('message', (message) => {
 
 });
 
-let channel_id = "493770850898542642"; 
-let message_id = "693940529896882237";
+
 client.on("messageReactionAdd", (reaction, user) => {
+
+    let channel_id = "493770850898542642"; 
+    let message_id = "693940529896882237";
+
     if(reaction.emoji.id == "496393769646817291" && reaction.message.id === message_id) 
         {
             guild.fetchMember(user) // fetch the user that reacted

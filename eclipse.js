@@ -967,7 +967,7 @@ client.on("messageReactionAdd", (reaction, user) => {
             guild.fetchMember(user) // fetch the user that reacted
                 .then((member) => 
                 {
-                    let role = (member.guild.roles.find(role => role.name === "👤 │Whitelisted│ 👤"));
+                    let role = member.guild.roles.find('name', '👤 │Whitelisted│ 👤);
                     member.addRole(role)
                     .then(() => 
                     {

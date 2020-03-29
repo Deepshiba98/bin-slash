@@ -956,12 +956,14 @@ client.on('message', (message) => {
 
 });
 
-client.on('messageReactionAdd', (reaction, user) => {
+client.on('messageReactionAdd', (reaction, member) => {
+
+    let role = member.guild.roles.find('name', '👤 │Whitelisted│ 👤');
+
     if (message.channel.id === '493770850898542642') {
       if (reaction.emoji.name === '496393769646817291') {
-        const guildMember = reaction.message.guild.members.get(user.id);
-        const role = reaction.message.guild.roles.get('636672962505736214');
-        guildMember.addRole(role);
+        const guildMember = reaction.message.guild.members.get(member.user.id);
+        member.addRole(role);
       }
     }
 });

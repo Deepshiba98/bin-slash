@@ -958,11 +958,10 @@ client.on('message', (message) => {
 
 client.on('messageReactionAdd', (reaction, user) => {
 
-    let guild = client.guilds.get(guildId);
-    let role = guild.roles.get(r => r.name === "👤 │Whitelisted│ 👤");
-
     if (message.channel.id === '493770850898542642') {
       if (reaction.emoji.name === '496393769646817291') {
+        let guild = client.guilds.get(guildId);
+        let role = guild.roles.get(r => r.name === "👤 │Whitelisted│ 👤");
         const guildMember = reaction.message.guild.members.get(user.id);
         guildMember.addRole(role);
       }
@@ -994,5 +993,7 @@ client.on('guildMemberAdd', member => {
     /*member.addRole(role);*/
 
 });
+
+
 
 client.login(process.env.BOT_TOKEN);

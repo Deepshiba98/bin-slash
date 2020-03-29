@@ -956,16 +956,23 @@ client.on('message', (message) => {
 
 });
 
-client.on('messageReactionAdd', (reaction, user, message) => {
-
-    if (message.channel.get === '493770850898542642') {
-      if (reaction.emoji.name === '496393769646817291') {
-        let guild = client.guilds.get(guildId);
-        let role = guild.roles.get(r => r.name === "👤 │Whitelisted│ 👤");
-        const guildMember = reaction.message.guild.members.get(user.id);
-        guildMember.addRole(role);
-      }
-    }
+let channel_id = "493770850898542642"; 
+let message_id = "693940529896882237";
+client.on("messageReactionAdd", (reaction, user) => {
+    if(reaction.emoji.id == "496393769646817291" && reaction.message.id === message_id) 
+        {
+            guild.fetchMember(user) // fetch the user that reacted
+                .then((member) => 
+                {
+                    let role = (member.guild.roles.find(role => role.name === "YOUR ROLE NAME HERE"));
+                    member.addRole(role)
+                    .then(() => 
+                    {
+                        console.log(`Added the role to ${member.displayName}`);
+                    }
+                    );
+                });
+        }
 });
 
 client.on('guildMemberAdd', member => {

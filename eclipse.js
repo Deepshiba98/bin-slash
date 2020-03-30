@@ -956,9 +956,28 @@ client.on('message', (message) => {
 
 });
 
+client.on('guildMemberAdd', member => {
+    member.guild.channels.get('485569932449546240').send(embed).then(async embedMessage => {
+      await embedMessage.react('✔️');
+      await embedMessage.react('❌');
+    });
+  
+    client.on('messageReactionAdd', async (reaction, user) => {
+      if (reaction.emoji.name === "✔️") {
+          const guildMember = reaction.message.guild.members.get(user.id);
+          if (!guildMember) throw 'Couldn\'t get guildMember!'
+  
+          const roleToAssign = reaction.message.guild.roles.find(r => r.name === '👤 │Whitelisted│ 👤')
+          if (!roleToAssign) throw 'Couldn\'t get roleToAssign!'
+  
+          await guildMember.addRole(roleToAssign)
+      } else if (reaction.emoji.name === "❌")
+          reaction.message.channel.send('Tell user to react to the correct emote');
+    });
+});
 
 client.on("messageReactionAdd", (reaction, user, message) => {
-    if(reaction.emoji.id == '496393769646817291' && reaction.message.id === '694252654141898763') 
+    if(reaction.emoji.id == '496393769646817291' && reaction.message.id === '693942022641418341') 
         {
             guild.fetchMember(user) // fetch the user that reacted
                 .then((member) => 

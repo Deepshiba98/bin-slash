@@ -1,1 +1,1 @@
-worker: node eclipse.js
+web: node eclipse.js

@@ -958,12 +958,12 @@ client.on('message', (message) => {
 
 client.on('guildMemberAdd', member => {
     member.guild.channels.get('485569932449546240').send(embed).then(async embedMessage => {
-      await embedMessage.react('✔️');
-      await embedMessage.react('❌');
+      await embedMessage.react('496393769646817291');
+      await embedMessage.react('496393769646817291');
     });
   
     client.on('messageReactionAdd', async (reaction, user) => {
-      if (reaction.emoji.name === "✔️") {
+      if (reaction.emoji.name === "496393769646817291") {
           const guildMember = reaction.message.guild.members.get(user.id);
           if (!guildMember) throw 'Couldn\'t get guildMember!'
   
@@ -971,7 +971,7 @@ client.on('guildMemberAdd', member => {
           if (!roleToAssign) throw 'Couldn\'t get roleToAssign!'
   
           await guildMember.addRole(roleToAssign)
-      } else if (reaction.emoji.name === "❌")
+      } else if (reaction.emoji.name === "496393769646817291")
           reaction.message.channel.send('Tell user to react to the correct emote');
     });
 });

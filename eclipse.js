@@ -977,12 +977,12 @@ client.on('guildMemberAdd', member => {
 });
 
 client.on("messageReactionAdd", (reaction, user, message) => {
-    if(reaction.emoji.id == '496393769646817291' && reaction.message.id === '693942022641418341') 
+    if(reaction.emoji.id == '<:pin2:695529279840190494>' && reaction.message.id === '695528723289473056') 
         {
             guild.fetchMember(user) // fetch the user that reacted
                 .then((member) => 
                 {   
-                    let role = message.guild.roles.find(role => role.name === "👤 │Whitelisted│ 👤");
+                    let role = message.guild.roles.find(role => role.name === "CIVIL");
                     //let role = member.guild.roles.find('name', '👤 │Whitelisted│ 👤');
                     user.addRole(role)
                     .then(() => 
@@ -992,48 +992,6 @@ client.on("messageReactionAdd", (reaction, user, message) => {
                     );
                 });
         }
-});
-
-const bot = new discord.Client({
-    partials: ['MESSAGE','REACTION']
-});
-const TOKEN = require('./config.json');
-const Yard = '695052272232824982'
-const MessageNumber = '695528723289473056'
-const emojiName = (reaction) => reaction.emoji.name === '<:pin2:695529279840190494>';
-
-bot.on('messageReactionAdd', async (reaction, user) => {
-    console.log("Message Reaction Add Top");
-
-    let applyRole = async () => {
-        let emojiName = reaction.emoji.name;
-        let role = reaction.message.guild.roles.cache.find;
-        let member = reaction.message.guild.members.cache.find(member => member.id == user.id);
-        if (role && member) {
-            console.log("Role and Member Found");
-            await member.roles.add(Yard);
-        }
-    }
-    if (reaction.message.partial) {
-        try {
-            let msg = await reaction.message.fetch()
-            console.log(msg.id);
-            if (msg.id === MessageNumber) {
-                console.log("Cached - Applied");
-                applyRole();
-            }
-        }
-        catch (err) {
-            console.log(err);
-        }
-    }
-    else {
-        console.log("Not a Partial");
-        if (reaction.message.id === MessageNumber) {
-            console.log("Not a Partial - applied")
-            applyRole();
-        }
-    }
 });
 
 client.on('guildMemberAdd', member => {

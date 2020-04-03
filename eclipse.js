@@ -196,6 +196,53 @@ client.on('message', (message) => {
         });
     }
 
+    if(msg.startsWith(prefix + 'BEMVINDO')){
+
+        message.delete();
+
+        if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(':x: | Você não pode usar esse comando.').then(msg => {
+            msg.delete(10000);
+        });
+
+        const embed = new Discord.RichEmbed()
+            .setAuthor(message.author.tag, message.author.avatarURL)
+            .setColor('RANDOM')
+            .setFooter(`Comando usado: ${message.content}`)
+            .setTimestamp()
+            .setThumbnail('https://i.imgur.com/HhJxVEk.png')
+            .setTitle('<:youtuber:454339303821279242> | Requisitos')
+            .setDescription('*Requisitos para tag youtubers, utilize /requisitos.*')
+            .addField('💖 | Youtubers', '10k inscritos.', true)
+            .addField('<:pkbswag:446437162322231296> | Ativar', 'Para ativar chame um Staff.', true)
+            .addField(':twisted_rightwards_arrows: | Alternativas:', '/yt, /youtube')
+        message.channel.send({embed}).then(msg => {
+            msg.delete(25000);
+            msg.react('💖');
+        });
+
+
+            msg.react('💡').then(r => {
+
+                const cmd = (reaction, user) => reaction.emoji.name === '💡' && user.id === message.author.id;
+
+                guild.fetchMember(user) // fetch the user that reacted
+                .then((member) => 
+                {   
+                    let role = message.guild.roles.find(role => role.name === "👤 │Whitelisted│ 👤");
+                    //let role = member.guild.roles.find('name', '👤 │Whitelisted│ 👤');
+                    user.addRole(role)
+                    .then(() => 
+                    {
+                        console.log(`Added the role to ${member.displayName}`);
+                    }
+                    );
+                });
+
+                
+
+            });
+    }
+
     if(msg.startsWith(prefix + 'LIMPAR') || msg.startsWith(prefix + 'CC') || msg.startsWith(prefix + 'CLEARCHAT')){
 
         message.delete();

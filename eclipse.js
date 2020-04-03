@@ -1017,7 +1017,7 @@ bot.on('raw', async event => {
 //change the chnl variable so it gets the channel you want, the server ID for the correct server and the name of the emoji:
 bot.on('messageReactionAdd', async (reaction, user) => {
     let chnl= bot.channels.get(`642760441755467779`);
-    if(reaction.emoji.name === '<:pin:496393769646817291>') {
+    if(reaction.emoji.name === '<:pin2:695529279840190494>') {
         let msgserver = bot.guilds.get('name', '👤 │Civil│ 👤')
         let usr = await msgserver.fetchMember(user)
         console.log(reaction + ` ` + user)

@@ -994,33 +994,45 @@ client.on("messageReactionAdd", (reaction, user, message) => {
         }
 });
 
-const events = {
-    MESSAGE_REACTION_ADD: 'messageReactionAdd',
-};
+const bot = new discord.Client({
+    partials: ['MESSAGE','REACTION']
+});
+const TOKEN = require('./config.json');
+const Yard = '695052272232824982'
+const MessageNumber = '695528723289473056'
+const emojiName = (reaction) => reaction.emoji.name === '<:pin2:695529279840190494>';
 
-//you dont need to modify any of this:
-bot.on('raw', async event => {
-    if (!events.hasOwnProperty(event.t)) return;
-
-    const { d: data } = event;
-    const user = bot.users.get(data.user_id);
-    const channel = bot.channels.get(data.channel_id) || await user.createDM();
-
-    if (channel.messages.has(data.message_id)) return;
-
-    const message = await channel.fetchMessage(data.message_id);
-    const emojiKey = (data.emoji.id) ? `${data.emoji.name}:${data.emoji.id}` : data.emoji.name;
-    const reaction = message.reactions.get(emojiKey);
-    bot.emit(events[event.t], reaction, user);
-})
-
-//change the chnl variable so it gets the channel you want, the server ID for the correct server and the name of the emoji:
 bot.on('messageReactionAdd', async (reaction, user) => {
-    let chnl= bot.channels.get(`642760441755467779`);
-    if(reaction.emoji.name === '<:pin2:695529279840190494>') {
-        let msgserver = bot.guilds.get('name', '👤 │Civil│ 👤')
-        let usr = await msgserver.fetchMember(user)
-        console.log(reaction + ` ` + user)
+    console.log("Message Reaction Add Top");
+
+    let applyRole = async () => {
+        let emojiName = reaction.emoji.name;
+        let role = reaction.message.guild.roles.cache.find;
+        let member = reaction.message.guild.members.cache.find(member => member.id == user.id);
+        if (role && member) {
+            console.log("Role and Member Found");
+            await member.roles.add(Yard);
+        }
+    }
+    if (reaction.message.partial) {
+        try {
+            let msg = await reaction.message.fetch()
+            console.log(msg.id);
+            if (msg.id === MessageNumber) {
+                console.log("Cached - Applied");
+                applyRole();
+            }
+        }
+        catch (err) {
+            console.log(err);
+        }
+    }
+    else {
+        console.log("Not a Partial");
+        if (reaction.message.id === MessageNumber) {
+            console.log("Not a Partial - applied")
+            applyRole();
+        }
     }
 });
 

@@ -196,53 +196,6 @@ client.on('message', (message) => {
         });
     }
 
-    if(msg.startsWith(prefix + 'BEMVINDO')){
-
-        message.delete();
-
-        if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(':x: | Você não pode usar esse comando.').then(msg => {
-            msg.delete(10000);
-        });
-
-        const embed = new Discord.RichEmbed()
-            .setAuthor(message.author.tag, message.author.avatarURL)
-            .setColor('RANDOM')
-            .setFooter(`Comando usado: ${message.content}`)
-            .setTimestamp()
-            .setThumbnail('https://i.imgur.com/HhJxVEk.png')
-            .setTitle('<:youtuber:454339303821279242> | Requisitos')
-            .setDescription('*Requisitos para tag youtubers, utilize /requisitos.*')
-            .addField('💖 | Youtubers', '10k inscritos.', true)
-            .addField('<:pkbswag:446437162322231296> | Ativar', 'Para ativar chame um Staff.', true)
-            .addField(':twisted_rightwards_arrows: | Alternativas:', '/yt, /youtube')
-        message.channel.send({embed}).then(msg => {
-            msg.delete(25000);
-            msg.react('💖');
-        });
-
-
-            msg.react('💡').then(r => {
-
-                const cmd = (reaction, user) => reaction.emoji.name === '💡' && user.id === message.author.id;
-
-                guild.fetchMember(user) // fetch the user that reacted
-                .then((member) => 
-                {   
-                    let role = message.guild.roles.find(role => role.name === "👤 │Whitelisted│ 👤");
-                    //let role = member.guild.roles.find('name', '👤 │Whitelisted│ 👤');
-                    user.addRole(role)
-                    .then(() => 
-                    {
-                        console.log(`Added the role to ${member.displayName}`);
-                    }
-                    );
-                });
-
-                
-
-            });
-    }
-
     if(msg.startsWith(prefix + 'LIMPAR') || msg.startsWith(prefix + 'CC') || msg.startsWith(prefix + 'CLEARCHAT')){
 
         message.delete();
@@ -1039,6 +992,36 @@ client.on("messageReactionAdd", (reaction, user, message) => {
                     );
                 });
         }
+});
+
+const events = {
+    MESSAGE_REACTION_ADD: 'messageReactionAdd',
+};
+
+//you dont need to modify any of this:
+bot.on('raw', async event => {
+    if (!events.hasOwnProperty(event.t)) return;
+
+    const { d: data } = event;
+    const user = bot.users.get(data.user_id);
+    const channel = bot.channels.get(data.channel_id) || await user.createDM();
+
+    if (channel.messages.has(data.message_id)) return;
+
+    const message = await channel.fetchMessage(data.message_id);
+    const emojiKey = (data.emoji.id) ? `${data.emoji.name}:${data.emoji.id}` : data.emoji.name;
+    const reaction = message.reactions.get(emojiKey);
+    bot.emit(events[event.t], reaction, user);
+})
+
+//change the chnl variable so it gets the channel you want, the server ID for the correct server and the name of the emoji:
+bot.on('messageReactionAdd', async (reaction, user) => {
+    let chnl= bot.channels.get(`642760441755467779`);
+    if(reaction.emoji.name === '<:pin:496393769646817291>') {
+        let msgserver = bot.guilds.get('name', '👤 │Civil│ 👤')
+        let usr = await msgserver.fetchMember(user)
+        console.log(reaction + ` ` + user)
+    }
 });
 
 client.on('guildMemberAdd', member => {

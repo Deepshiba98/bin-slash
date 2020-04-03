@@ -977,7 +977,7 @@ client.on('guildMemberAdd', member => {
 });
 
 client.on("messageReactionAdd", (reaction, user, message) => {
-    if(reaction.emoji.id == '<:pin2:695529279840190494>' && reaction.message.id === '695528723289473056') 
+    if(reaction.emoji.id == '695529279840190494' && reaction.message.id === '695528723289473056') 
         {
             guild.fetchMember(user) // fetch the user that reacted
                 .then((member) => 
